@@ -1,0 +1,45 @@
+/* Type. Sizes are the SOURCE values measured in the decks (page = 952pt
+   wide) converted to a 1280 x 720 authoring slide (x1.344). Multiply by
+   1.5 for a 1920 x 1080 canvas: the ratios are what matter. */
+:root {
+  --font-serif: "Henderson BCG Serif", "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --font-sans: "Henderson BCG Sans", "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* forms only; the decks use it for field labels */
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-bold: 700;
+
+  /* Display + titles: always the serif */
+  --text-plate: 121px;    /* section numbers "01" */
+  --text-chapter: 95px;   /* CHAPTER II / cover title */
+  --text-hero: 68px;      /* cover title, two lines */
+  --text-section: 50px;   /* section opener */
+  --text-title-lg: 40px;
+  --text-title: 34px;     /* the workhorse slide title */
+  --text-subtitle: 24px;
+
+  /* Sans: labels, body, data */
+  --text-lead: 20px;      /* stand-first under a title */
+  --text-body-lg: 16px;
+  --text-body: 15px;
+  --text-small: 13px;     /* the true body size of a proposal slide */
+  --text-micro: 11px;     /* table cells, spec values */
+  --text-nano: 8px;       /* corner labels, legal, source notes */
+
+  --leading-display: 1.02;
+  --leading-title: 1.14;
+  --leading-body: 1.38;
+  --leading-tight: 1.22;
+
+  --tracking-caps: 0.06em;   /* every all-caps label */
+  --tracking-caps-wide: 0.16em;  /* "WORLDWIDE"-style spaced caps */
+  --tracking-display: -0.012em;
+  --tracking-body: 0;
+
+  /* Role shorthands */
+  --type-eyebrow: var(--weight-bold) var(--text-small)/1.2 var(--font-sans);
+  --type-title: var(--weight-regular) var(--text-title)/var(--leading-title) var(--font-serif);
+  --type-body: var(--weight-regular) var(--text-small)/var(--leading-body) var(--font-sans);
+  --type-data: var(--weight-regular) var(--text-micro)/1.3 var(--font-sans);
+}

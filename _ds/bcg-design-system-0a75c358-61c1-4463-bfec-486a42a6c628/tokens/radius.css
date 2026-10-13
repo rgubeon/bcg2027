@@ -1,0 +1,18 @@
+/* Corners + borders. The brand's only two shape ideas: a hairline outline
+   and a generous radius. Nothing is square except full-bleed imagery. */
+:root {
+  --radius-pill: 999px;     /* every tag, chip, breadcrumb and org-chart node */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-card: 12px;      /* info cards, table wrappers */
+  --radius-photo: 14px;     /* photography, always rounded */
+  --radius-plate: 20px;     /* number plates and logo lozenges */
+  --radius-panel: 56px;     /* the page panel of the proposal template */
+  --radius-signature: 150px;/* the one oversized corner — used ONCE per slide,
+                               on the panel corner opposite the logo */
+
+  --border-hairline: 1px solid var(--rule-hairline);
+  --border-ink: 1px solid var(--green-ink);
+  --border-accent: 1px solid var(--green-signal);
+  --border-mint: 1px solid var(--mint-300);
+}

@@ -1,0 +1,31 @@
+/* Spacing + slide geometry, measured off the decks at a 1280 x 720 slide. */
+:root {
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --space-7: 24px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 64px;
+  --space-12: 80px;
+
+  /* Slide grid */
+  --slide-w: 1280px;
+  --slide-h: 720px;
+  --slide-pad-x: 42px;     /* editorial template: content starts 3.3% in */
+  --slide-pad-y: 34px;
+  --slide-gap: 28px;       /* gutter between text column and imagery */
+  --col-text: 300px;       /* the narrow text column of a proposal slide */
+  --col-text-wide: 420px;
+
+  /* Proposal template: white page, inset panel */
+  --page-inset: 14px;      /* panel inset from the page edge */
+  --panel-pad: 30px;
+  --header-h: 34px;        /* logo row height */
+  --rule-w: 1px;
+  --rule-w-accent: 2px;
+}

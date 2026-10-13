@@ -1,0 +1,54 @@
+/* Colour — every hex below was sampled from the supplied BCG × beon. WWOM
+   PDFs (pixel probe + PDF fill operators). Values marked (derived) are
+   interpolations added only to complete a ramp; nothing else is invented. */
+:root {
+  /* ---- Green: the whole brand lives here ---- */
+  --green-ink: #00270b;        /* deepest green. Full-bleed grounds, wordmark, body copy on paper */
+  --green-forest: #0c2b15;     /* dark panels + logo lozenge in the proposal template */
+  --green-deep: #113414;       /* rules, table headers, small dark accents on paper */
+  --green-mid: #1a7430;        /* mid green: fine rules, secondary marks */
+  --green-spring: #3fe465;     /* (derived from stripe ramp) hover / pressed state of signal */
+  --green-signal: #46f86f;     /* THE accent. Full-slide grounds, pills, underlines, stripes */
+  --green-stripe: #39f761;     /* second stop of the diagonal stripe ramp */
+  --mint-300: #d9fddb;         /* pale panel fill (divider slides) */
+  --mint-200: #e3fddb;         /* table zebra rows, soft chips */
+  --mint-100: #eefdf0;         /* (derived) lightest mint wash */
+
+  /* ---- Neutrals: warm paper, never cool grey ---- */
+  --white: #ffffff;
+  --paper: #fbfaf9;            /* page ground of the proposal template */
+  --panel: #f8f7f5;            /* inner panel on white */
+  --cream: #f3eeea;            /* THE paper colour of the editorial template */
+  --cream-deep: #ebe8e4;       /* number plates, quiet blocks */
+  --rule-grey: #c2cac4;        /* hairline on paper where green would shout */
+  --sage: #7f9385;             /* muted sage, captions on dark */
+  --ink: #000000;              /* wordmark + display type in the editorial template */
+
+  /* ---- Semantic aliases: use these in components ---- */
+  --surface-page: var(--paper);
+  --surface-paper: var(--cream);
+  --surface-panel: var(--panel);
+  --surface-mint: var(--mint-300);
+  --surface-inverse: var(--green-ink);
+  --surface-inverse-alt: var(--green-forest);
+  --surface-accent: var(--green-signal);
+
+  --text-primary: var(--green-ink);
+  --text-display: var(--green-ink);
+  --text-secondary: var(--green-deep);
+  --text-muted: var(--sage);
+  --text-on-dark: var(--white);
+  --text-on-accent: var(--green-ink);
+  --text-accent: var(--green-signal);
+  --text-accent-dark: var(--green-mid);
+
+  --rule-accent: var(--green-signal);
+  --rule-hairline: var(--rule-grey);
+  --rule-ink: var(--green-ink);
+
+  --border-outline: var(--green-ink);   /* 1px pills + framed boxes */
+  --border-soft: var(--green-signal);   /* 1px mint/green frames */
+
+  --link: var(--green-mid);
+  --link-hover: var(--green-ink);
+}

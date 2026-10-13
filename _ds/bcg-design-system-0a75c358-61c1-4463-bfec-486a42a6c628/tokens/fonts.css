@@ -1,0 +1,35 @@
+/* Webfonts — the licensed BCG corporate typefaces, supplied by the user.
+   Files live in assets/fonts/ (OTF, latin-extended + math subset).
+   Supplied: Henderson BCG Serif Regular, Henderson BCG Sans Regular, Bold.
+   NOT supplied: Henderson BCG Sans Light (300) and any italics — the 300
+   face below intentionally points at Regular so --weight-light degrades
+   gracefully instead of falling out of the family. Send the Light file and
+   only this one src line changes. */
+@font-face {
+  font-family: "Henderson BCG Serif";
+  src: url("../assets/fonts/BCGHenSerifRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Henderson BCG Sans";
+  src: url("../assets/fonts/BCGHenSansRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Henderson BCG Sans";
+  src: url("../assets/fonts/BCGHenSansBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Henderson BCG Sans";
+  src: url("../assets/fonts/BCGHenSansRegular.otf") format("opentype"); /* stand-in for the missing Light */
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

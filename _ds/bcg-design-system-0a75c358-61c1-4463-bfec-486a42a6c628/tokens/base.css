@@ -1,0 +1,22 @@
+/* Minimal base: the brand's defaults so a blank page already looks right. */
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font: var(--type-body);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-display);
+}
+p { margin: 0 0 var(--space-4); }
+strong { font-weight: var(--weight-bold); }
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid var(--green-signal); }
+a:hover { color: var(--link-hover); border-bottom-color: var(--green-ink); }
+::selection { background: var(--green-signal); color: var(--green-ink); }

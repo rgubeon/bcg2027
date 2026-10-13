@@ -1,0 +1,48 @@
+/* Web layer. The decks are the source of truth for colour, type and shape;
+   these tokens add only what a screen needs and a page does not: container
+   widths, nav height, interaction states, focus, reveal motion.
+   NOTE: the deck type ladder is deliberately small (13px body on a 1280
+   slide, read at arm's length). On the web that becomes 17px. Both ladders
+   ship: --text-* for slides, --text-web-* for screens. */
+:root {
+  /* Breakpoints (documented for authors; media queries take the literals) */
+  --bp-sm: 480px;  /* @kind spacing */
+  --bp-md: 768px;  /* @kind spacing */
+  --bp-lg: 1024px; /* @kind spacing */
+  --bp-xl: 1280px; /* @kind spacing */
+
+  /* Page frame */
+  --container: 1200px;
+  --container-narrow: 760px;   /* reading measure for long prose */
+  --container-pad: 24px;
+  --container-pad-sm: 20px;
+  --nav-h: 72px;
+  --nav-h-sm: 60px;
+  --section-gap: 96px;         /* vertical rhythm between sections */
+  --section-gap-sm: 56px;
+
+  /* Web type ladder */
+  --text-web-hero: clamp(38px, 6vw, 82px);
+  --text-web-h1: clamp(30px, 4vw, 54px);
+  --text-web-h2: clamp(24px, 2.6vw, 38px);
+  --text-web-h3: 24px;
+  --text-web-lead: clamp(17px, 1.5vw, 22px);
+  --text-web-body: 17px;
+  --text-web-small: 15px;
+  --text-web-label: 12px;      /* bold caps, +0.06em */
+  --text-web-legal: 11px;
+
+  /* Interaction states, built from the green ramp */
+  --state-accent-hover: var(--green-spring);
+  --state-accent-press: var(--green-mid);
+  --state-ink-hover: var(--green-forest);
+  --state-tint-hover: var(--mint-200);
+  --focus-ring: 0 0 0 2px var(--green-signal);
+  --focus-ring-dark: 0 0 0 2px var(--white);
+
+  /* Scroll reveal: fade plus a 10px rise, once, never on repeat */
+  --reveal-rise: 10px;  /* @kind spacing */
+  --reveal-dur: 520ms;  /* @kind other */
+  --reveal-stagger: 70ms; /* @kind other */
+  --overlay-scrim: rgba(0, 39, 11, .88); /* @kind color */
+}
