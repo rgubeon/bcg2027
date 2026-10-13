@@ -218,34 +218,32 @@
   </section>
 
   <section data-scene="arrows" style="position:relative; height:300vh">
-    <div style="position:sticky; top:0; height:100vh; pointer-events:none; display:flex; align-items:center; padding:90px var(--gr, clamp(20px,6vw,88px)) 90px var(--gl, clamp(20px,6vw,88px)); box-sizing:border-box; overflow:hidden">
-      <div style="max-width:1240px; width:100%; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:clamp(32px,6vw,96px)">
-        <div style="flex:5 1 0; min-width:min(300px,100%); display:grid; align-items:center; justify-items:start; text-align:left; container-type:inline-size">
-          <p data-words="" style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(28px, 8.6cqw, 60px); line-height:1.12; letter-spacing:-.022em; color:var(--ink); text-wrap:balance; opacity:clamp(0, (.93 - var(--ap, 0)) * 7, 1); filter:blur(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * 10px)); transform:translateY(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * -16px))"><span style="display:block">Si las flechas fuesen oportunidades,</span><span style="display:block">¿cuál dirías que es mayor?</span></p>
-          <p style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(52px, 20cqw, 140px); line-height:1; letter-spacing:-.032em; color:var(--ink); opacity:clamp(0, (var(--ap, 0) - .975) * 40, 1); filter:blur(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 10px)); transform:translateY(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 16px)); transition:opacity 900ms cubic-bezier(.22,.61,.36,1), filter 1000ms cubic-bezier(.22,.61,.36,1), transform 1100ms cubic-bezier(.2,0,.15,1)">¡Exacto!</p>
+    <div style="position:sticky; top:0; height:100vh; pointer-events:none; display:flex; align-items:center; justify-content:center; padding:90px var(--gr, clamp(20px,6vw,88px)) 90px var(--gl, clamp(20px,6vw,88px)); box-sizing:border-box; overflow:hidden">
+      <div style="width:100%; max-width:1240px; margin:0 auto; display:grid; place-items:center">
+        <div data-arrows="" style="grid-area:1 / 1; position:relative; width:min(100%, 820px, calc((100vh - 200px) * 1.286)); aspect-ratio:180 / 140; transform-origin:50% 50%; transform:scale(calc(1 + var(--sp, 0) * .12))">
+          <svg viewBox="0 0 180 140" role="img" aria-label="Cuatro flechas y la flecha que dibuja el espacio entre ellas" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible">
+            <g>
+              <path d="M10 30L60 30L60 10L90 40L60 70L60 50L10 50Z" pathLength="1" style="fill:none; stroke:color-mix(in srgb, var(--ink) 82%, transparent); stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0) * 2.5, 1))"></path>
+              <path d="M90 30L140 30L140 10L170 40L140 70L140 50L90 50Z" pathLength="1" style="fill:none; stroke:color-mix(in srgb, var(--ink) 82%, transparent); stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.12) * 2.5, 1))"></path>
+              <path d="M10 90L60 90L60 70L90 100L60 130L60 110L10 110Z" pathLength="1" style="fill:none; stroke:color-mix(in srgb, var(--ink) 82%, transparent); stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.24) * 2.5, 1))"></path>
+              <path d="M90 90L140 90L140 70L170 100L140 130L140 110L90 110Z" pathLength="1" style="fill:none; stroke:color-mix(in srgb, var(--ink) 82%, transparent); stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.36) * 2.5, 1))"></path>
+            </g>
+          </svg>
+          <svg viewBox="0 0 180 140" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible">
+            <defs>
+              <linearGradient id="arwGlass" x1="60" y1="40" x2="140" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0" style="stop-color:var(--glass); stop-opacity:.85"></stop>
+                <stop offset=".55" style="stop-color:var(--accent); stop-opacity:.45"></stop>
+                <stop offset="1" style="stop-color:var(--glass); stop-opacity:.6"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" style="fill:url(#arwGlass); opacity:clamp(0, (var(--ap, 0) - .15) * 1.6, 1); stroke:none"></path>
+            <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" pathLength="1" style="fill:none; stroke:var(--accent); stroke-width:.32px; stroke-linejoin:miter; stroke-linecap:butt; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - var(--ap, 0))"></path>
+          </svg>
         </div>
-        <div style="flex:7 1 0; min-width:min(300px,100%); display:flex; justify-content:center">
-          <div data-arrows="" style="position:relative; width:min(100%, 680px, calc((100vh - 200px) * 1.1)); aspect-ratio:180 / 140; transform-origin:50% 50%; transform:scale(calc(1 + var(--sp, 0) * .12))">
-            <svg viewBox="0 0 180 140" role="img" aria-label="Cuatro flechas y la flecha que dibuja el espacio entre ellas" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible">
-              <g>
-                <path d="M10 30L60 30L60 10L90 40L60 70L60 50L10 50Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.30) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0) * 2.5, 1))"></path>
-                <path d="M90 30L140 30L140 10L170 40L140 70L140 50L90 50Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.42) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.12) * 2.5, 1))"></path>
-                <path d="M10 90L60 90L60 70L90 100L60 130L60 110L10 110Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.54) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.24) * 2.5, 1))"></path>
-                <path d="M90 90L140 90L140 70L170 100L140 130L140 110L90 110Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.66) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.36) * 2.5, 1))"></path>
-              </g>
-            </svg>
-            <svg viewBox="0 0 180 140" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible">
-              <defs>
-                <linearGradient id="arwGlass" x1="60" y1="40" x2="140" y2="100" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" style="stop-color:var(--glass); stop-opacity:.85"></stop>
-                  <stop offset=".55" style="stop-color:var(--accent); stop-opacity:.45"></stop>
-                  <stop offset="1" style="stop-color:var(--glass); stop-opacity:.6"></stop>
-                </linearGradient>
-              </defs>
-              <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" style="fill:url(#arwGlass); opacity:clamp(0, (var(--ap, 0) - .15) * 1.6, 1); stroke:none"></path>
-              <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" pathLength="1" style="fill:none; stroke:var(--accent); stroke-width:.32px; stroke-linejoin:miter; stroke-linecap:butt; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - var(--ap, 0))"></path>
-            </svg>
-          </div>
+        <div style="grid-area:1 / 1; position:relative; z-index:1; width:100%; display:grid; place-items:center; text-align:center">
+          <p data-words="" style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(20px, 3.4vw, 52px); line-height:1.08; letter-spacing:-.025em; color:var(--ink); text-wrap:balance; opacity:clamp(0, (.93 - var(--ap, 0)) * 7, 1); filter:blur(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * 10px)); transform:translateY(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * -16px))"><span style="display:block">Si las flechas fuesen oportunidades,</span><span style="display:block">¿cuál dirías que es mayor?</span></p>
+          <p style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(64px, 10vw, 168px); line-height:1; letter-spacing:-.032em; color:var(--ink); opacity:clamp(0, (var(--ap, 0) - .975) * 40, 1); filter:blur(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 10px)); transform:translateY(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 16px)); transition:opacity 900ms cubic-bezier(.22,.61,.36,1), filter 1000ms cubic-bezier(.22,.61,.36,1), transform 1100ms cubic-bezier(.2,0,.15,1)">¡Exacto!</p>
         </div>
       </div>
     </div>
@@ -582,8 +580,9 @@
               <sc-for list="{{ p.xp }}" as="x" hint-placeholder-count="0">
                 <article data-fx="" style="display:flex; flex-direction:column; border-radius:26px; overflow:hidden; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 30%, transparent); backdrop-filter:blur(26px) saturate(140%); -webkit-backdrop-filter:blur(26px) saturate(140%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent)">
                   <sc-if value="{{ x.hasImg }}" hint-placeholder-val="{{ false }}">
-                    <div onClick="{{ x.onOpen }}" data-cursor="Ampliar" style="position:relative; aspect-ratio:4 / 3; overflow:hidden; cursor:pointer; background:var(--slot)">
+                    <div onClick="{{ x.onOpen }}" data-cursor="{{ x.cursor }}" style="position:relative; aspect-ratio:4 / 3; overflow:hidden; cursor:pointer; background:var(--slot)">
                       <img decoding="async" loading="lazy" src="{{ x.img }}" alt="{{ x.title }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
+                      <span style="position:absolute; top:14px; right:14px; display:{{ x.countDisplay }}; align-items:center; gap:8px; height:32px; padding:0 12px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 72%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); color:var(--ink); font:700 11px/1 var(--font-sans); letter-spacing:.12em"><i class="fa-solid fa-images" style="width:14px; font-size:12px; line-height:1; text-align:center; color:var(--accent)"></i>{{ x.count }}</span>
                     </div>
                   </sc-if>
                   <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(24px,2.6vw,34px)">
@@ -1638,7 +1637,7 @@ class Component extends DCLogic {
         sc.__tg = { ee: 1 - Math.pow(1 - x, 3) };
       } else if (sc.getAttribute('data-scene') === 'arrows') {
         const cl = (v) => Math.max(0, Math.min(1, v)), sm = (v) => v * v * (3 - 2 * v);
-        sc.__tg = { ad: cl(p / 0.22), ap: sm(cl((p - 0.24) / 0.28)), sp: sm(cl((p - 0.04) / 0.7)) };
+        sc.__tg = { ad: cl(p / 0.46), ap: sm(cl((p - 0.38) / 0.24)), sp: sm(cl((p - 0.04) / 0.7)) };
       } else {
         if (!sc.__w) sc.__w = Array.prototype.slice.call(sc.querySelectorAll('[data-w]'));
         const dim = Math.max(0, Math.min(1, (p - 0.04) / 0.16));
@@ -2114,7 +2113,7 @@ class Component extends DCLogic {
         optDisplay: opts ? 'block' : 'none', legacyDisplay: opts || !(e.venues || []).length ? 'none' : 'block',
         optList: opts && ei === st.ev ? opts.map((o, i) => this.buildOpt(e, o, i, mob)) : [],
         secXp: 'sec-experiencias-' + e.id, xpDisplay: (e.experiences || []).length ? 'block' : 'none',
-        xp: (e.experiences || []).map((x, j) => ({ n: String(j + 1).padStart(2, '0'), kicker: x.kicker, title: x.title, body: (x.body || []).map((s) => ({ text: s })), img: x.img || '', hasImg: !!x.img, onOpen: () => this.openGal(x.title, [x.img], 0), links: x.links || [], linksDisplay: x.links ? 'flex' : 'none' })),
+        xp: (e.experiences || []).map((x, j) => ({ n: String(j + 1).padStart(2, '0'), kicker: x.kicker, title: x.title, body: (x.body || []).map((s) => ({ text: s })), ...(() => { const I = x.imgs || (x.img ? [x.img] : []); return { img: I[0] || '', hasImg: I.length > 0, count: String(I.length), countDisplay: I.length > 1 ? 'flex' : 'none', cursor: I.length > 1 ? 'Galería' : 'Ampliar', onOpen: () => this.openGal(x.title, I, 0) }; })(), links: x.links || [], linksDisplay: x.links ? 'flex' : 'none' })),
         secConcept: 'sec-concept-' + e.id, secBriefing: 'sec-briefing-' + e.id, secVenues: 'sec-venues-' + e.id,
         secActivations: 'sec-activations-' + e.id, secBudget: 'sec-budget-' + e.id,
         venues: (e.venues || []).map((v, i) => {

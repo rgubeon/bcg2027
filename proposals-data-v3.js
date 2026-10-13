@@ -2022,7 +2022,31 @@ window.BCG_EVENTS = [
       "Un espacio que no viene definido por lo que tradicionalmente esperamos de una celebración navideña, sino por todo lo que somos capaces de imaginar cuando nos atrevemos a mirar desde otra perspectiva.",
       "Territorio conceptual: la creatividad, la ruptura con los convencionalismos y la libertad de reinterpretar la Navidad."
      ]
-    }
+    },
+    "moments": [
+     {
+      "day": "17 de diciembre",
+      "when": "La experiencia",
+      "title": "Cuando el cine cobra vida",
+      "lead": "O cómo ver la Navidad desde otro escenario.",
+      "body": [
+       "En el Autocine, la magia del cine va a traspasar la pantalla.",
+       "Crearemos un espacio escénico cuadrado, rodeado de telas que actuarán como pantallas de proyección. Durante la cena, estas se convertirán en un soporte para proyectar los mensajes que los propios invitados quieran compartir, haciendo que la experiencia también hable de ellos.",
+       "Al finalizar la cena, la proyección dará paso a una sucesión de escenas icónicas del cine. Y, de pronto, cuando menos lo esperen, las telas caerán para revelar lo que se esconde tras ellas: un espectáculo musical en directo en el que los personajes parecen escapar de la pantalla y cobrar vida ante los invitados.",
+       "Porque esta Navidad, en BCG, no nos conformamos con ver la magia. La hacemos realidad."
+      ],
+      "lists": [
+       {
+        "title": "Una coreografía que conecta distintas épocas y universos cinematográficos",
+        "items": [
+         "El imaginario gótico y sofisticado de «Pesadilla antes de Navidad», con «What’s This?».",
+         "La estética de cuento y el baile clásico de «El Cascanueces y los cuatro reinos».",
+         "Y, como gran final, «Love Actually» al ritmo de «All I Want for Christmas Is You», transformando el espacio en un escenario pop lleno de energía."
+        ]
+       }
+      ]
+     }
+    ]
    },
    {
     "key": "jarama",
@@ -2186,6 +2210,13 @@ window.BCG_EVENTS = [
    {
     "kicker": "Fotocall",
     "title": "Fotocall de deseos extraordinarios",
+    "imgs": [
+     "assets/navidad/xp-fotomaton-a.jpg",
+     "assets/navidad/xp-fotomaton-b.jpg",
+     "assets/navidad/xp-photocall-b.jpg",
+     "assets/navidad/xp-photocall-a.jpg",
+     "assets/navidad/xp-photocall-c.jpg"
+    ],
     "body": [
      "Un fotocall interactivo detecta a los asistentes y proyecta sobre sus cabezas una nube de pensamiento con uno de los deseos recibidos, de forma aleatoria. Cada foto es una mirada diferente a lo que esperamos del nuevo año, y quien consiga fotografiarse con su propio deseo recibe un premio."
     ],
@@ -2199,6 +2230,10 @@ window.BCG_EVENTS = [
    {
     "kicker": "Icono",
     "title": "El Cubo BCG",
+    "imgs": [
+     "assets/navidad/xp-cubo-a.jpg",
+     "assets/navidad/xp-cubo-b.jpg"
+    ],
     "body": [
      "En la Navidad predominan las formas circulares: las bolas del árbol, los copos de nieve. Nuestro icono es un cubo que añade una nueva dimensión a la forma de sentir y compartir la Navidad, sobre el que proyectar imágenes, frases y texturas que inspiran."
     ]
@@ -2206,6 +2241,10 @@ window.BCG_EVENTS = [
    {
     "kicker": "Experiencia",
     "title": "Las 10 uvas de la suerte",
+    "imgs": [
+     "assets/navidad/xp-uvas-caja.jpg",
+     "assets/navidad/xp-uvas-banquete.jpg"
+    ],
     "body": [
      "Durante la fiesta, un pack de uvas para simular a golpe de música las campanadas de fin de año. Con una particularidad: en lugar de 12 uvas, 10.",
      "Nuestra forma diferente de tomarnos las cosas: con tiempo, sin prisas y optimizando siempre los recursos para conseguir más con menos."
