@@ -47,7 +47,7 @@
     @property --slot { syntax: '<color>'; inherits: true; initial-value: #e3efe5; }
     @property --paper { syntax: '<color>'; inherits: true; initial-value: #d9fddb; }
     :root { transition: --ink 1.6s cubic-bezier(.22,.61,.36,1), --accent 1.6s cubic-bezier(.22,.61,.36,1), --glass 1.6s cubic-bezier(.22,.61,.36,1), --slot 1.6s cubic-bezier(.22,.61,.36,1), --paper 1.6s cubic-bezier(.22,.61,.36,1); }
-    @keyframes zenBar { 0%, 100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+    @keyframes zenBar { 0%, 100% { transform: scaleY(.4); } 50% { transform: scaleY(1); } }
   </style>
 </helmet>
 
@@ -83,17 +83,16 @@
   </div>
 </header>
 
-<sc-if value="{{ musicOpen }}" hint-placeholder-val="{{ false }}">
-  <div data-music="" data-no-ripple="" style="position:fixed; top:78px; right:clamp(20px,4vw,48px); z-index:45; width:min(330px, calc(100vw - 40px)); box-sizing:border-box; padding:10px; border-radius:24px; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 58%, transparent); backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 14%, transparent), 0 30px 80px color-mix(in srgb, var(--ink) 14%, transparent); opacity:{{ musicOp }}; transform:{{ musicY }}; transition:opacity 420ms cubic-bezier(.22,.61,.36,1), transform 520ms cubic-bezier(.2,0,.15,1)">
+<div data-music="" data-no-ripple="" aria-hidden="{{ musicHidden }}" style="pointer-events:{{ musicPE }}; visibility:{{ musicVis }}; transform-origin:top right; position:fixed; top:78px; right:clamp(20px,4vw,48px); z-index:45; width:min(330px, calc(100vw - 40px)); box-sizing:border-box; padding:10px; border-radius:24px; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 58%, transparent); backdrop-filter:blur(28px) saturate(150%); -webkit-backdrop-filter:blur(28px) saturate(150%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 14%, transparent), 0 30px 80px color-mix(in srgb, var(--ink) 14%, transparent); opacity:{{ musicOp }}; transform:{{ musicY }}; transition:{{ musicTr }}">
     <div style="padding:10px 12px 8px; font:700 10px/1 var(--font-sans); letter-spacing:.24em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 62%, transparent)">Banda sonora</div>
     <sc-for list="{{ tracks }}" as="tr" hint-placeholder-count="3">
-      <button onClick="{{ tr.onClick }}" style="width:100%; display:flex; align-items:center; gap:14px; min-height:56px; padding:10px 12px; box-sizing:border-box; border:none; border-radius:16px; background:{{ tr.bg }}; color:var(--ink); cursor:pointer; text-align:left; transition:background-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="background:color-mix(in srgb, var(--glass) 70%, transparent)">
+      <button onClick="{{ tr.onClick }}" style="width:100%; display:flex; align-items:center; gap:14px; min-height:56px; padding:10px 12px; box-sizing:border-box; border:none; border-radius:16px; background:{{ tr.bg }}; color:var(--ink); cursor:pointer; text-align:left; transition:background-color 600ms cubic-bezier(.22,.61,.36,1)" style-hover="background:color-mix(in srgb, var(--glass) 70%, transparent)">
         <span style="flex:none; width:22px; font-family:var(--font-serif); font-size:15px; color:var(--accent)">{{ tr.n }}</span>
         <span style="flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:5px">
           <span style="font-family:var(--font-serif); font-size:18px; line-height:1.15; letter-spacing:-.01em">{{ tr.title }}</span>
           <span style="font:700 10px/1 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 60%, transparent)">{{ tr.artist }}</span>
         </span>
-        <i class="fa-solid {{ tr.icon }}" style="flex:none; width:16px; font-size:12px; line-height:1; text-align:center; color:{{ tr.iconColor }}"></i>
+        <i class="fa-solid {{ tr.icon }}" style="flex:none; width:16px; font-size:12px; line-height:1; text-align:center; color:{{ tr.iconColor }}; transition:color 600ms cubic-bezier(.22,.61,.36,1)"></i>
       </button>
     </sc-for>
     <div style="height:1px; margin:6px 12px; background:color-mix(in srgb, var(--ink) 12%, transparent)"></div>
@@ -102,11 +101,10 @@
       <span>{{ muteLabel }}</span>
     </button>
   </div>
-</sc-if>
 
 <nav style="position:fixed; left:50%; bottom:16px; z-index:41; display:{{ tabsDisplay }}; transform:{{ tabsTransform }}; opacity:{{ tabsOpacity }}; pointer-events:{{ tabsPE }}; transition:opacity 700ms cubic-bezier(.22,.61,.36,1), transform 900ms cubic-bezier(.22,.61,.36,1); gap:4px; padding:5px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 20%, transparent); background:color-mix(in srgb, var(--glass) 40%, transparent); backdrop-filter:blur(22px) saturate(150%); -webkit-backdrop-filter:blur(22px) saturate(150%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent), 0 18px 50px color-mix(in srgb, var(--ink) 10%, transparent)">
   <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
-    <button onClick="{{ t.onClick }}" style="display:flex; align-items:center; gap:10px; height:44px; padding:0 {{ t.pad }}; border-radius:999px; border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.color }}; cursor:pointer; white-space:nowrap; font:700 11px/1 var(--font-sans); letter-spacing:.14em; text-transform:uppercase; transition:background-color 400ms cubic-bezier(.22,.61,.36,1), color 400ms cubic-bezier(.22,.61,.36,1), border-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ink)">
+    <button onClick="{{ t.onClick }}" style="display:flex; align-items:center; gap:10px; height:44px; padding:0 {{ t.pad }}; border-radius:999px; border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.color }}; cursor:pointer; white-space:nowrap; font:700 11px/1 var(--font-sans); letter-spacing:.14em; text-transform:uppercase; transition:background-color 700ms cubic-bezier(.22,.61,.36,1), color 700ms cubic-bezier(.22,.61,.36,1), border-color 700ms cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ink)">
       <i class="{{ t.icon }}" style="width:16px; font-size:13px; line-height:1; text-align:center; color:{{ t.iconColor }}; transition:color 400ms cubic-bezier(.22,.61,.36,1)"></i>
       <span>{{ t.label }}</span>
     </button>
@@ -117,17 +115,19 @@
   <span style="margin:0 0 10px; font:700 10px/1 var(--font-sans); letter-spacing:.24em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 60%, transparent)">Propuestas</span>
   <sc-for list="{{ propRail }}" as="pr" hint-placeholder-count="3">
     <button onClick="{{ pr.onClick }}" style="display:flex; align-items:center; gap:12px; height:40px; padding:0; border:none; background:none; cursor:pointer; color:{{ pr.color }}; font:700 11px/1 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; white-space:nowrap; transition:color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ink)">
-      <span style="display:block; height:1px; width:{{ pr.w }}; background:currentColor; transition:width 600ms cubic-bezier(.2,0,.15,1)"></span>
+      <span style="display:block; height:1px; width:{{ pr.w }}; background:currentColor; transition:width 900ms cubic-bezier(.16,1,.3,1)"></span>
       <i class="{{ pr.icon }}" style="width:16px; font-size:13px; line-height:1; text-align:center; color:{{ pr.iconColor }}; transition:color 400ms cubic-bezier(.22,.61,.36,1)"></i>
       <span>{{ pr.label }}</span>
     </button>
-    <div style="display:{{ pr.subDisplay }}; flex-direction:column; gap:2px; margin:0 0 6px 26px">
+    <div style="display:grid; grid-template-rows:{{ pr.subRows }}; opacity:{{ pr.subOp }}; transition:grid-template-rows 800ms cubic-bezier(.16,1,.3,1), opacity 700ms cubic-bezier(.22,.61,.36,1)">
+     <div style="min-height:0; overflow:hidden; display:flex; flex-direction:column; gap:2px; padding:0 0 6px 26px">
       <sc-for list="{{ pr.subs }}" as="sb" hint-placeholder-count="0">
         <button onClick="{{ sb.onClick }}" style="display:flex; align-items:center; gap:10px; height:32px; padding:0; border:none; background:none; cursor:pointer; color:{{ sb.color }}; font:700 10px/1 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; white-space:nowrap; transition:color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ink)">
-          <span style="display:block; height:1px; width:{{ sb.w }}; background:currentColor; transition:width 600ms cubic-bezier(.2,0,.15,1)"></span>
+          <span style="display:block; height:1px; width:{{ sb.w }}; background:currentColor; transition:width 900ms cubic-bezier(.16,1,.3,1)"></span>
           <span>{{ sb.label }}</span>
         </button>
       </sc-for>
+     </div>
     </div>
   </sc-for>
 </aside>
@@ -137,7 +137,7 @@
   <sc-for list="{{ rail }}" as="r" hint-placeholder-count="5">
     <button onClick="{{ r.onClick }}" style="display:flex; align-items:center; gap:12px; height:40px; padding:0; border:none; background:none; cursor:pointer; color:{{ r.color }}; font:700 11px/1 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; white-space:nowrap; transition:color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ink)">
       <span>{{ r.label }}</span>
-      <span style="display:block; height:1px; width:{{ r.w }}; background:currentColor; transition:width 600ms cubic-bezier(.2,0,.15,1)"></span>
+      <span style="display:block; height:1px; width:{{ r.w }}; background:currentColor; transition:width 900ms cubic-bezier(.16,1,.3,1)"></span>
     </button>
   </sc-for>
 </aside>
@@ -219,22 +219,31 @@
 
   <section data-scene="arrows" style="position:relative; height:300vh">
     <div style="position:sticky; top:0; height:100vh; pointer-events:none; display:flex; align-items:center; padding:90px var(--gr, clamp(20px,6vw,88px)) 90px var(--gl, clamp(20px,6vw,88px)); box-sizing:border-box; overflow:hidden">
-      <div style="max-width:1240px; width:100%; margin:0 auto; display:grid; place-items:center; text-align:center; container-type:inline-size">
-        <div style="grid-area:1 / 1; position:relative; z-index:2; display:grid; place-items:center; padding:0 16px; pointer-events:none">
-          <p data-words="" style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:min(5cqw, 64px); line-height:1.12; letter-spacing:-.022em; color:var(--ink); opacity:clamp(0, (.93 - var(--ap, 0)) * 7, 1); filter:blur(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * 10px)); transform:translateY(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * -16px))"><span style="display:block; white-space:nowrap">Si las flechas fuesen oportunidades,</span><span style="display:block; white-space:nowrap">¿cuál dirías que es mayor?</span></p>
-          <p style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(52px,8.4vw,150px); line-height:1; letter-spacing:-.032em; color:var(--ink); opacity:clamp(0, (var(--ap, 0) - .975) * 40, 1); filter:blur(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 10px)); transform:translateY(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 16px)); transition:opacity 900ms cubic-bezier(.22,.61,.36,1), filter 1000ms cubic-bezier(.22,.61,.36,1), transform 1100ms cubic-bezier(.2,0,.15,1)">¡Exacto!</p>
+      <div style="max-width:1240px; width:100%; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:clamp(32px,6vw,96px)">
+        <div style="flex:5 1 0; min-width:min(300px,100%); display:grid; align-items:center; justify-items:start; text-align:left; container-type:inline-size">
+          <p data-words="" style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(28px, 8.6cqw, 60px); line-height:1.12; letter-spacing:-.022em; color:var(--ink); text-wrap:balance; opacity:clamp(0, (.93 - var(--ap, 0)) * 7, 1); filter:blur(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * 10px)); transform:translateY(calc(clamp(0, (var(--ap, 0) - .78) * 6.6, 1) * -16px))"><span style="display:block">Si las flechas fuesen oportunidades,</span><span style="display:block">¿cuál dirías que es mayor?</span></p>
+          <p style="grid-area:1 / 1; margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(52px, 20cqw, 140px); line-height:1; letter-spacing:-.032em; color:var(--ink); opacity:clamp(0, (var(--ap, 0) - .975) * 40, 1); filter:blur(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 10px)); transform:translateY(calc((1 - clamp(0, (var(--ap, 0) - .975) * 40, 1)) * 16px)); transition:opacity 900ms cubic-bezier(.22,.61,.36,1), filter 1000ms cubic-bezier(.22,.61,.36,1), transform 1100ms cubic-bezier(.2,0,.15,1)">¡Exacto!</p>
         </div>
-        <div style="grid-area:1 / 1; position:relative; z-index:1; width:100%; display:flex; justify-content:center">
-          <div data-arrows="" style="position:relative; width:min(100%, 860px, calc((100vh - 200px) * 1.1)); aspect-ratio:180 / 140; transform-origin:50% 50%; transform:scale(calc(1 + var(--sp, 0) * .22))">
+        <div style="flex:7 1 0; min-width:min(300px,100%); display:flex; justify-content:center">
+          <div data-arrows="" style="position:relative; width:min(100%, 680px, calc((100vh - 200px) * 1.1)); aspect-ratio:180 / 140; transform-origin:50% 50%; transform:scale(calc(1 + var(--sp, 0) * .12))">
             <svg viewBox="0 0 180 140" role="img" aria-label="Cuatro flechas y la flecha que dibuja el espacio entre ellas" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible">
-              <g style="opacity:calc(1 - var(--ap, 0) * .45)">
-                <path d="M10 30L60 30L60 10L90 40L60 70L60 50L10 50Z" pathLength="1" style="fill:none; stroke:var(--ink); stroke-opacity:.82; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0) * 2.5, 1))"></path>
-                <path d="M90 30L140 30L140 10L170 40L140 70L140 50L90 50Z" pathLength="1" style="fill:none; stroke:var(--ink); stroke-opacity:.82; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.12) * 2.5, 1))"></path>
-                <path d="M10 90L60 90L60 70L90 100L60 130L60 110L10 110Z" pathLength="1" style="fill:none; stroke:var(--ink); stroke-opacity:.82; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.24) * 2.5, 1))"></path>
-                <path d="M90 90L140 90L140 70L170 100L140 130L140 110L90 110Z" pathLength="1" style="fill:none; stroke:var(--ink); stroke-opacity:.82; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.36) * 2.5, 1))"></path>
+              <g>
+                <path d="M10 30L60 30L60 10L90 40L60 70L60 50L10 50Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.30) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0) * 2.5, 1))"></path>
+                <path d="M90 30L140 30L140 10L170 40L140 70L140 50L90 50Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.42) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.12) * 2.5, 1))"></path>
+                <path d="M10 90L60 90L60 70L90 100L60 130L60 110L10 110Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.54) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.24) * 2.5, 1))"></path>
+                <path d="M90 90L140 90L140 70L170 100L140 130L140 110L90 110Z" pathLength="1" style="fill:#00270b; fill-opacity:clamp(0, (var(--ad, 1) - 0.66) * 3, 1); stroke:#00270b; stroke-width:.24px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - clamp(0, (var(--ad, 1) - 0.36) * 2.5, 1))"></path>
               </g>
-              <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" style="fill:var(--accent); fill-opacity:calc(var(--ap, 0) * .2); stroke:none"></path>
-              <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" pathLength="1" style="fill:none; stroke:var(--accent); stroke-width:.32px; stroke-linejoin:round; stroke-linecap:round; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - var(--ap, 0))"></path>
+            </svg>
+            <svg viewBox="0 0 180 140" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible">
+              <defs>
+                <linearGradient id="arwGlass" x1="60" y1="40" x2="140" y2="100" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" style="stop-color:var(--glass); stop-opacity:.85"></stop>
+                  <stop offset=".55" style="stop-color:var(--accent); stop-opacity:.45"></stop>
+                  <stop offset="1" style="stop-color:var(--glass); stop-opacity:.6"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" style="fill:url(#arwGlass); opacity:clamp(0, (var(--ap, 0) - .15) * 1.6, 1); stroke:none"></path>
+              <path d="M60 70L90 40L90 50L140 50L140 90L90 90L90 100Z" pathLength="1" style="fill:none; stroke:var(--accent); stroke-width:.32px; stroke-linejoin:miter; stroke-linecap:butt; stroke-dasharray:1 1; stroke-dashoffset:calc(1 - var(--ap, 0))"></path>
             </svg>
           </div>
         </div>
@@ -487,7 +496,7 @@
     </div>
   </section>
 
-  <div id="proposals" style="opacity:{{ propOpacity }}; filter:{{ propFilter }}; transition:opacity 650ms cubic-bezier(.22,.61,.36,1), filter 650ms cubic-bezier(.22,.61,.36,1)">
+  <div id="proposals" style="opacity:{{ propOpacity }}; filter:{{ propFilter }}; transform:{{ propY }}; transition:{{ propTr }}">
     <sc-for list="{{ proposals }}" as="p" hint-placeholder-count="1">
       <div style="display:{{ p.display }}">
 
@@ -823,13 +832,13 @@
                           <div style="display:{{ m.mediaDisplay }}; flex:7 1 0; min-width:min(360px,100%); max-width:{{ m.mediaMax }}; margin:0 auto; flex-direction:column; gap:clamp(36px,5vh,56px); order:{{ m.mOrder }}">
                             <sc-if value="{{ m.hasVideo }}" hint-placeholder-val="{{ false }}">
                               <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(8px,1.1vw,14px); width:100%">
-                                <div data-fx="" data-cursor="Ver vídeo" onClick="{{ m.onVideo }}" style="grid-row:1 / span 2; position:relative; aspect-ratio:9 / 16; border-radius:22px; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 30px 80px color-mix(in srgb, var(--ink) 12%, transparent)">
+                                <div data-fx="" data-cursor="Ver vídeo" onClick="{{ m.onVideo }}" style="grid-row:{{ m.vidRow }}; grid-column:{{ m.vidCol }}; position:relative; aspect-ratio:{{ m.vidAr }}; border-radius:22px; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 30px 80px color-mix(in srgb, var(--ink) 12%, transparent)">
                                   <img decoding="async" loading="lazy" src="{{ m.videoPoster }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover">
                                   <video data-vprev="" src="{{ m.video }}" muted="" loop="" playsinline="" preload="metadata" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover"></video>
                                   <span style="position:absolute; left:14px; bottom:14px; display:flex; align-items:center; gap:10px; height:36px; padding:0 16px 0 12px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 72%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); color:var(--ink); font:700 11px/1 var(--font-sans); letter-spacing:.16em; text-transform:uppercase"><i class="fa-solid fa-volume-high" style="width:14px; font-size:11px; line-height:1; text-align:center; color:var(--accent)"></i>Con sonido</span>
                                 </div>
                                 <sc-for list="{{ m.vidSide }}" as="vs" hint-placeholder-count="0">
-                                  <div data-fx="" data-cursor="Ampliar" onClick="{{ vs.onOpen }}" style="position:relative; min-height:0; border-radius:{{ vs.radius }}; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 24px 60px color-mix(in srgb, var(--ink) 9%, transparent)">
+                                  <div data-fx="" data-cursor="Ampliar" onClick="{{ vs.onOpen }}" style="position:relative; min-height:0; grid-column:{{ vs.col }}; aspect-ratio:{{ vs.ar }}; border-radius:{{ vs.radius }}; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 24px 60px color-mix(in srgb, var(--ink) 9%, transparent)">
                                     <img decoding="async" loading="lazy" src="{{ vs.src }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
                                   </div>
                                 </sc-for>
@@ -938,7 +947,7 @@
                             <div data-track="" style="display:flex; width:max-content; will-change:transform">
                               <sc-for list="{{ m.marquee }}" as="mq" hint-placeholder-count="0">
                                 <div onClick="{{ mq.onOpen }}" style="flex:none; padding-right:clamp(10px,1.2vw,16px)">
-                                  <div style="position:relative; height:clamp(220px,34vh,380px); aspect-ratio:{{ mq.ar }}; border-radius:18px; overflow:hidden; cursor:pointer; background:var(--slot)">
+                                  <div style="position:relative; height:clamp(260px,46vh,520px); aspect-ratio:{{ mq.ar }}; border-radius:18px; overflow:hidden; cursor:pointer; background:var(--slot)">
                                     <img decoding="async" loading="lazy" src="{{ mq.src }}" alt="" draggable="false" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover">
                                   </div>
                                 </div>
@@ -1193,9 +1202,9 @@ class Component extends DCLogic {
     { key: 'concept', label: 'Concepto' }, { key: 'briefing', label: 'Briefing' }, { key: 'experiencias', label: 'Experiencia', xp: true },
     { key: 'agenda', label: 'Agenda', opt: true }, { key: 'destino', label: 'Destino', opt: true }, { key: 'hotel', label: 'Alojamiento', opt: true }, { key: 'momentos', label: 'Momentos', opt: true }
   ];
-  secsFor(e) {
+  secsFor(e, oi) {
     if (!e || !e.options) return this.secs;
-    const o0 = e.options[0] || {};
+    const o0 = e.options[oi > 0 ? oi : 0] || e.options[0] || {};
     const L = e.secLabels || {};
     return this.optSecs.filter((s) => s.xp ? (e.experiences || []).length : !s.opt || (s.key === 'agenda' ? o0.agenda : s.key === 'destino' ? o0.dest : s.key === 'hotel' ? o0.hotel : (o0.moments || []).length))
       .map((s) => (L[s.key] ? Object.assign({}, s, { label: L[s.key] }) : s));
@@ -1259,7 +1268,7 @@ class Component extends DCLogic {
     const a = this._mp && this._mp[this._ma];
     if (a && this.state.soundOn) this.fadeTo(a, this.target(), on ? 1 : 2.4);
   }
-  isVid(s) { return /\.mp4$/i.test(s || ''); }
+  isVid(s) { return /\.(mp4|webm)(#.*)?$/i.test(s || ''); }
   syncGalDuck() { const g = this.state.gal; this.setDuck(!!g && this.isVid(g.imgs[g.i])); }
 
   /* card and reel previews play muted only while on screen */
@@ -1308,7 +1317,12 @@ class Component extends DCLogic {
   };
   onImgLoad = (e) => { const im = e.target; if (im && im.tagName === 'IMG') this.markImg(im); };
 
+  vStart(v) { const m = v && v.tagName === 'VIDEO' && /#t=(\d+(?:\.\d+)?)/.exec(v.getAttribute('src') || ''); return m ? parseFloat(m[1]) : 0; }
+  onVidMeta = (e) => { const v = e.target, t = this.vStart(v); if (t && v.duration > t && v.currentTime < t - 0.5) { try { v.currentTime = t; } catch (_) {} } };
+  onVidTime = (e) => { const v = e.target, t = this.vStart(v); if (t && v.loop && v.duration > t && v.currentTime < t - 0.5) { try { v.currentTime = t; } catch (_) {} } };
   componentDidMount() {
+    document.addEventListener('loadedmetadata', this.onVidMeta, true);
+    document.addEventListener('timeupdate', this.onVidTime, true);
     document.addEventListener('load', this.onImgLoad, true);
     document.addEventListener('error', this.onImgLoad, true);
     document.addEventListener('click', this.onBgClick);
@@ -1811,9 +1825,10 @@ class Component extends DCLogic {
       const w = document.getElementById('opt-' + id + '-' + i);
       if (w && w.getBoundingClientRect().top < vh * 0.55) opt = i;
     }
-    for (let i = 0; i < SS.length; i++) {
-      const el = document.getElementById('sec-' + SS[i].key + '-' + id + (SS[i].opt ? '-' + Math.max(0, opt) : ''));
-      if (el && el.getBoundingClientRect().top < vh * 0.55) sec = SS[i].key;
+    const S2 = this.secsFor(E, opt);
+    for (let i = 0; i < S2.length; i++) {
+      const el = document.getElementById('sec-' + S2[i].key + '-' + id + (S2[i].opt ? '-' + Math.max(0, opt) : ''));
+      if (el && el.getClientRects().length && el.getBoundingClientRect().top < vh * 0.55) sec = S2[i].key;
     }
     if (inProps !== this.state.inProps || sec !== this.state.sec || opt !== this.state.opt) this.setState({ inProps, sec, opt }, () => this.syncPalette());
   }
@@ -1887,9 +1902,9 @@ class Component extends DCLogic {
         requestAnimationFrame(() => this.jumpTo(pr));
         this._fxDirty = true;
         this.syncPalette();
-        this.drop(window.innerWidth / 2, window.innerHeight * 0.45, 1.5);
+        this.drop(window.innerWidth / 2, window.innerHeight * 0.45, 0.8);
       });
-    }, 680);
+    }, 600);
   };
 
   toggleVenue(ei, i) {
@@ -1910,9 +1925,9 @@ class Component extends DCLogic {
       this.setState({ switching: false }, () => {
         const e2 = tgt(); if (e2) { this.jumpTo(e2); requestAnimationFrame(() => { const e3 = tgt(); if (e3) this.jumpTo(e3); }); }
         this._fxDirty = true;
-        this.drop(window.innerWidth / 2, window.innerHeight * 0.45, 1.5);
+        this.drop(window.innerWidth / 2, window.innerHeight * 0.45, 0.8);
       });
-    }, 680);
+    }, 600);
   }
 
   /* irregular mosaic on a 12-col grid: patterns for 1–4 images, longer sets chained in groups of 3 */
@@ -1980,7 +1995,7 @@ class Component extends DCLogic {
           dest: d, destBody: T(d.body), transfer: tr, destOrder: ord(true), transferImgDisplay: tr.img ? 'flex' : 'none',
           destMosaic: this.mosaic(destImgs, 0), destMediaDisplay: destImgs.length ? 'flex' : 'none',
           destFacts: d.facts || [], destFactsDisplay: d.facts ? 'grid' : 'none', transferDisplay: o.transfer ? 'grid' : 'none',
-          hotel: h, hotelBody: T(h.body), hotelMosaic: this.mosaic(h.imgs, 1),
+          hotel: h, hotelBody: T(h.body), hotelMosaic: this.mosaic(!o.hero && (h.imgs || []).length > 1 && heroSrc === h.imgs[0] ? h.imgs.slice(1) : h.imgs, 1),
           rooms: h.rooms, roomsDisplay: h.rooms.length > 1 ? 'grid' : 'none',
           roomMosaic: [], roomImgsDisplay: h.roomImgs ? 'block' : 'none', roomGal: this.galCover(h.roomImgs),
           roomsTotal: h.total || h.rooms.reduce((s, r) => s + (parseInt(r.n, 10) || 0), 0).toLocaleString('es-ES')
@@ -1990,7 +2005,8 @@ class Component extends DCLogic {
         const imgs = m.imgs || [], acts = m.acts || [], gal = m.gallery || [];
         return {
           day: m.day, when: m.when, title: m.title, mediaMax: m.mediaMax || 'none',
-          vidSide: m.video ? (m.imgs || []).slice(0, 2).map((src, j) => ({ src, radius: j ? '16px' : '18px', onOpen: () => this.openGal(m.title, [m.video].concat(m.imgs || []), j + 1, (m.imgs || [])[0]) })) : [],
+          vidRow: m.videoWide ? 'auto' : '1 / span 2', vidCol: m.videoWide ? '1 / span 2' : 'auto', vidAr: m.videoWide ? '16 / 9' : '9 / 16',
+          vidSide: m.video ? (m.imgs || []).slice(0, 2).map((src, j) => ({ src, ar: m.videoWide ? ((m.imgs || []).length === 1 ? '16 / 9' : '4 / 3') : 'auto', col: m.videoWide && (m.imgs || []).length === 1 ? '1 / span 2' : 'auto', radius: j ? '16px' : '18px', onOpen: () => this.openGal(m.title, [m.video].concat(m.imgs || []), j + 1, (m.imgs || [])[0]) })) : [],
           hasVideo: !!m.video, video: m.video, videoPoster: (m.imgs || [])[0], onVideo: () => this.openGal(m.title, [m.video].concat(m.imgs || []), 0, (m.imgs || [])[0]), lead: m.lead || '', leadDisplay: m.lead ? 'block' : 'none',
           gal: this.galCover(m.collapse ? imgs : null), mosaicDisplay: (m.collapse || m.video) ? 'none' : 'block',
           body: T(m.body), mosaic: m.collapse ? [] : this.mosaic(imgs, k % 2), mOrder: ord(k % 2 === 1), mediaDisplay: imgs.length ? 'flex' : 'none',
@@ -2128,14 +2144,12 @@ class Component extends DCLogic {
 
     const on = st.soundOn;
     const soundBars = React.createElement('span', { style: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px', width: '16px', height: '13px' } },
-      [0, 1, 2, 3].map((i) => React.createElement('span', {
-        key: i + (on ? 'a' : 'b'),
-        style: {
-          display: 'block', width: '2px', height: '13px', borderRadius: '2px', background: on ? 'var(--accent)' : 'color-mix(in srgb, var(--ink) 55%, transparent)',
-          transform: on ? undefined : 'scaleY(.25)',
-          animation: on ? 'zenBar ' + (0.9 + i * 0.17) + 's ease-in-out ' + (i * 0.12) + 's infinite' : 'none'
-        }
-      })));
+      [0, 1, 2, 3].map((i) => React.createElement('span', { key: i, style: { display: 'block', width: '2px', height: '13px', transform: on ? 'scaleY(1)' : 'scaleY(.25)', transition: 'transform 900ms cubic-bezier(.22,.61,.36,1)' } },
+        React.createElement('span', { style: {
+          display: 'block', width: '100%', height: '100%', borderRadius: '2px', background: on ? 'var(--accent)' : 'color-mix(in srgb, var(--ink) 55%, transparent)',
+          transition: 'background-color 900ms cubic-bezier(.22,.61,.36,1)',
+          animation: 'zenBar ' + (1.3 + i * 0.22) + 's ease-in-out ' + (-i * 0.31) + 's infinite', animationPlayState: on ? 'running' : 'paused'
+        } }))));
 
     return {
       n16: 16, n18: 18, n20: 20, n34: 34,
@@ -2154,7 +2168,9 @@ class Component extends DCLogic {
         if (next) this.musicOn(); else this.musicOff();
       },
       toggleMusic: () => this.setState((s) => ({ musicOpen: !s.musicOpen })),
-      musicOpen: !!st.musicOpen, musicOp: '1', musicY: 'none',
+      musicOpen: !!st.musicOpen, musicOp: st.musicOpen ? '1' : '0', musicY: st.musicOpen ? 'none' : 'translateY(-10px) scale(.97)',
+      musicPE: st.musicOpen ? 'auto' : 'none', musicVis: st.musicOpen ? 'visible' : 'hidden', musicHidden: st.musicOpen ? 'false' : 'true',
+      musicTr: st.musicOpen ? 'opacity 560ms cubic-bezier(.22,.61,.36,1), transform 760ms cubic-bezier(.16,1,.3,1), visibility 0s linear 0s' : 'opacity 420ms cubic-bezier(.4,0,.2,1), transform 520ms cubic-bezier(.4,0,.2,1), visibility 0s linear 520ms',
       tracks: this.tracks.map((tr, i) => {
         const cur = i === (st.trk || 0), playing = cur && st.soundOn;
         return {
@@ -2182,7 +2198,7 @@ class Component extends DCLogic {
           color: a ? 'var(--ink)' : 'color-mix(in srgb, var(--ink) 58%, transparent)',
           iconColor: a ? 'var(--accent)' : 'color-mix(in srgb, var(--ink) 50%, transparent)',
           w: a ? '36px' : '14px', onClick: () => this.selectEv(i),
-          subDisplay: a && e.options ? 'flex' : 'none',
+          subRows: a && e.options ? '1fr' : '0fr', subOp: a && e.options ? '1' : '0',
           subs: a && e.options ? e.options.map((o, j) => {
             const on = st.opt === j;
             return {
@@ -2220,7 +2236,7 @@ class Component extends DCLogic {
       galImgLoad: (e) => { const im = e && e.target; if (!im || !im.naturalWidth) return; const k = 1.75 / Math.min(2, window.devicePixelRatio || 1) * 1.15; im.style.maxWidth = 'min(100%, ' + Math.round(im.naturalWidth * k) + 'px)'; im.style.maxHeight = 'min(100%, ' + Math.round(im.naturalHeight * k) + 'px)'; },
       optOpacity: st.optFade ? '0' : '1', optFilter: st.optFade ? 'blur(12px)' : 'none',
       agendaTableDisplay: w >= 900 ? 'block' : 'none', agendaStackDisplay: w >= 900 ? 'none' : 'flex',
-      rail: this.secsFor(EV[st.ev]).map((s) => ({
+      rail: this.secsFor(EV[st.ev], st.opt).map((s) => ({
         label: s.label, color: st.sec === s.key ? 'var(--ink)' : 'color-mix(in srgb, var(--ink) 58%, transparent)', w: st.sec === s.key ? '36px' : '14px',
         onClick: () => { const el = document.getElementById('sec-' + s.key + '-' + curId + (s.opt ? '-' + Math.max(0, st.opt ?? -1) : '')); if (el) this.scrollTo(el, -40); }
       })),
@@ -2230,7 +2246,8 @@ class Component extends DCLogic {
         return { date: parts[0], guests: parts[1] || '', name: e.name, img: e.banner, brief: e.desc, onClick: () => this.selectEv(i) };
       }),
       proposals,
-      propOpacity: st.switching ? '0' : '1', propFilter: st.switching ? 'blur(12px)' : 'none',
+      propOpacity: st.switching ? '0' : '1', propFilter: st.switching ? 'blur(4px)' : 'blur(0px)', propY: st.switching ? 'translateY(10px)' : 'none',
+      propTr: st.switching ? 'opacity 560ms cubic-bezier(.4,0,.2,1), filter 560ms cubic-bezier(.4,0,.2,1), transform 560ms cubic-bezier(.4,0,.2,1)' : 'opacity 1100ms cubic-bezier(.22,.61,.36,1) 80ms, filter 1100ms cubic-bezier(.22,.61,.36,1) 80ms, transform 1300ms cubic-bezier(.16,1,.3,1) 80ms',
       budgetCols: mob ? 'minmax(0,1fr) auto' : 'minmax(0,1fr) 80px 120px 140px',
       budgetColDisplay: mob ? 'none' : 'block',
 

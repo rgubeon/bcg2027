@@ -190,7 +190,8 @@ window.BCG_EVENTS = [
        "Zona de relax con vistas a la playa y al atardecer, y el mejor servicio de restaurante justo frente al mar, en un espacio reservado para eventos."
       ],
       "imgs": [
-       "assets/summer/raw/p12-1.jpg"
+       "assets/summer/raw/p12-1.jpg",
+       "assets/summer/raw/p12-2.jpg"
       ]
      },
      {
@@ -203,9 +204,8 @@ window.BCG_EVENTS = [
        "Una invitación a cambiar la mirada desde el primer paso. El arco dará continuidad a la experiencia en la cena de gala."
       ],
       "imgs": [
-       "assets/summer/arco.jpg"
-      ],
-      "mediaMax": "520px"
+       "assets/summer/arco-v2.jpg"
+      ]
      },
      {
       "day": "Día 2 · 1 de julio",
@@ -235,9 +235,20 @@ window.BCG_EVENTS = [
       ],
       "acts": [
        {
-        "name": "Polo",
-        "line": "Una visión completa de todas las facetas del polo.",
-        "body": "Clases de polo, taqueo libre, prácticas, torneos, entrenamiento de caballos y pupilaje, con un pabellón de 380 m² y la cancha frente al mar.",
+        "name": "Polo Experience",
+        "line": "Elegancia, adrenalina y tradición.",
+        "body": "Una jornada en torno a uno de los deportes más exclusivos del mundo: la velocidad de los caballos, la destreza de los jugadores y la emoción de un juego en el que cada jugada puede cambiar el resultado. Los invitados viven el partido desde una zona de hospitalidad diseñada para la ocasión y, en el descanso, copa en mano, saltan al campo para el tradicional pisado de césped. Lo acompaña un tarjetón en el que la palabra POLO se repite y entrelaza: «Prepárate para ver el mundo del polo desde todas las perspectivas».",
+        "includes": [
+         "Identidad y escudo propios",
+         "Speaker especializado",
+         "Cóctel de bienvenida",
+         "Punto fotográfico ecuestre",
+         "Divot stomping",
+         "Trofeo y brindis final",
+         "Tarjetón POLO"
+        ],
+        "video": "assets/video/pwoman.mp4",
+        "videoWide": true,
         "imgs": [
          "assets/summer/raw/p14-1.jpg"
         ]
@@ -276,40 +287,6 @@ window.BCG_EVENTS = [
          "assets/summer/raw/p18-1.jpg",
          "assets/summer/raw/p18-2.jpg",
          "assets/summer/raw/p18-3.jpg"
-        ]
-       }
-      ]
-     },
-     {
-      "day": "Día 2 · 1 de julio",
-      "when": "Experiencia",
-      "title": "Polo Experience",
-      "lead": "Elegancia, adrenalina y tradición.",
-      "body": [
-       "Una jornada en torno a uno de los deportes más exclusivos del mundo: la velocidad de los caballos, la destreza de los jugadores y la emoción de un juego en el que cada jugada puede cambiar el resultado.",
-       "Los invitados disfrutan de un partido desde una zona de hospitalidad diseñada para la ocasión, con una propuesta gastronómica cuidada, un ambiente social distendido y detalles personalizados."
-      ],
-      "imgs": [
-       "assets/summer/raw/p14-1.jpg"
-      ],
-      "lists": [
-       {
-        "title": "La jornada",
-        "items": [
-         "Nombre propio para la jornada: identidad gráfica, señalética, banderolas, zona de hospitalidad personalizada y un escudo exclusivo del evento.",
-         "Un speaker especializado explica las reglas, presenta a los jugadores y narra las jugadas más emocionantes.",
-         "Zona exclusiva con cóctel de bienvenida.",
-         "Punto fotográfico ecuestre supervisado.",
-         "Divot stomping: en el descanso, copa en mano, los invitados saltan al campo para recolocar el césped levantado por los caballos, al más puro estilo Pretty Woman.",
-         "Trofeo personalizado, fotografía de grupo y brindis final."
-        ]
-       },
-       {
-        "title": "Tarjetón · Experiencia polo",
-        "items": [
-         "Anverso: la palabra POLO se repite y entrelaza en una composición tipográfica que invita a descubrirla desde distintas perspectivas.",
-         "Titular: «Prepárate para ver el mundo del polo desde todas las perspectivas».",
-         "Reverso: «Descubre la emoción de un deporte que quizá nunca has vivido de cerca. Y después, cambia de perspectiva: salta al campo y participa en el tradicional pisado de césped. Una experiencia que va mucho más allá de ser espectador»."
         ]
        }
       ]
@@ -370,24 +347,23 @@ window.BCG_EVENTS = [
        }
       ],
       "imgs": [
+       "assets/summer/raw/p21-6.jpg",
        "assets/summer/raw/p20-2.jpg",
        "assets/summer/raw/p20-1.jpg",
        "assets/summer/raw/p20-3.jpg"
       ],
       "galleryTitle": "¿Qué queremos hacer?",
       "gallery": [
+       "assets/summer/raw/p21-5.jpg",
        "assets/summer/raw/p21-4.jpg",
        "assets/summer/raw/p21-1.jpg",
-       "assets/summer/raw/p21-5.jpg",
-       "assets/summer/raw/p21-6.jpg",
        "assets/summer/raw/p21-2.jpg",
        "assets/summer/raw/p21-3.jpg"
       ],
       "galleryAr": [
+       1.483,
        1.616,
        1.064,
-       1.483,
-       0.896,
        1.066,
        1.066
       ]
@@ -549,6 +525,7 @@ window.BCG_EVENTS = [
      "label": "Barcelona → hotel en autobús",
      "body": "La opción más rápida y cómoda es llegar a Barcelona en tren o en avión. Allí, un autobús espera al grupo para llevarlo directamente al hotel, sin desplazamientos adicionales."
     },
+    "hero": "assets/summer/lloret-castillo.jpg",
     "hotel": {
      "name": "Hotel L’Azure",
      "stars": "Hotel 4* Superior",
@@ -755,100 +732,6 @@ window.BCG_EVENTS = [
    }
   ],
   "banner": "assets/summer/raw/p9-1.jpg",
-  "conceptImg": "assets/summer/concept-arch.jpg",
-  "conceptImgs": [
-   {
-    "src": "assets/summer/mood-2.jpg",
-    "ar": 0.748
-   },
-   {
-    "src": "assets/summer/mood-4.jpg",
-    "ar": 1.523
-   },
-   {
-    "src": "assets/summer/mood-5.jpg",
-    "ar": 0.786
-   },
-   {
-    "src": "assets/summer/mood-1.jpg",
-    "ar": 0.576
-   },
-   {
-    "src": "assets/summer/mood-3.jpg",
-    "ar": 0.893
-   },
-   {
-    "src": "assets/summer/mood-8.jpg",
-    "ar": 0.574
-   },
-   {
-    "src": "assets/summer/mood-6.jpg",
-    "ar": 0.833
-   },
-   {
-    "src": "assets/summer/mood-7.jpg",
-    "ar": 0.663
-   }
-  ],
-  "conceptCols": [
-   {
-    "w": 152,
-    "items": [
-     {
-      "src": "assets/summer/mood-1.jpg",
-      "ar": 0.576
-     }
-    ]
-   },
-   {
-    "w": 184,
-    "items": [
-     {
-      "src": "assets/summer/mood-2.jpg",
-      "ar": 0.748
-     },
-     {
-      "src": "assets/summer/mood-3.jpg",
-      "ar": 0.893
-     }
-    ]
-   },
-   {
-    "w": 198,
-    "items": [
-     {
-      "src": "assets/summer/mood-4.jpg",
-      "ar": 1.523
-     },
-     {
-      "src": "assets/summer/mood-5.jpg",
-      "ar": 0.786
-     }
-    ]
-   },
-   {
-    "w": 110,
-    "items": [
-     {
-      "src": "assets/summer/mood-6.jpg",
-      "ar": 0.833
-     },
-     {
-      "src": "assets/summer/mood-7.jpg",
-      "ar": 0.663
-     }
-    ]
-   },
-   {
-    "w": 124,
-    "items": [
-     {
-      "src": "assets/summer/mood-8.jpg",
-      "ar": 0.574
-     }
-    ]
-   }
-  ],
   "conceptBoard": {
    "ar": 1.7756,
    "items": [
@@ -921,10 +804,11 @@ window.BCG_EVENTS = [
   "fg": "#ffffff",
   "tone": "light",
   "meta": "7 – 9 oct 2027 · 75 invitados",
-  "desc": "Cena de alto nivel en un espacio diferencial. Opción 1: Puglia. Opción 2: Menorca.",
+  "desc": "Cena de alto nivel en un espacio diferencial. Opción 1: Apulia. Opción 2: Menorca.",
   "conceptTitle": "Algunas cosas solo se revelan cuando se observa más allá de ellas",
   "conceptLead": "Por eso creamos un universo de transparencias, capas y profundidades donde nada se muestra de una sola manera y donde cada mirada aporta una nueva lectura.",
-  "conceptBody": "Un espacio para celebrar la capacidad de ampliar el punto de vista para descubrir lo que hay tras lo evidente. Porque para BCG, ver más lejos empieza por mirar a través de la mirada de sus socios.",
+  "conceptBody": "Un espacio para celebrar la capacidad de ampliar el punto de vista para descubrir lo que hay tras lo evidente.",
+  "quote": "“Porque para BCG, ver más lejos empieza por mirar a través de la mirada de sus socios.”",
   "specs": [
    {
     "label": "Asistentes",
@@ -940,14 +824,13 @@ window.BCG_EVENTS = [
    },
    {
     "label": "Lugar · Opción 1",
-    "value": "Puglia"
+    "value": "Apulia"
    },
    {
     "label": "Lugar · Opción 2",
     "value": "Menorca"
    }
   ],
-  "conceptImg": "assets/outing/concept.jpg",
   "banner": "assets/outing/p38-1a.jpg",
   "options": [
    {
@@ -1060,7 +943,6 @@ window.BCG_EVENTS = [
      "total": "112",
      "roomImgs": [
       "assets/outing/p39-1a.jpg",
-      "assets/outing/p39-1b.jpg",
       "assets/outing/p39-2a.jpg",
       "assets/outing/p39-2b.jpg",
       "assets/outing/p39-3a.jpg",
@@ -1096,9 +978,9 @@ window.BCG_EVENTS = [
       "day": "Día 1 · 7 de octubre",
       "when": "Llegada",
       "title": "Check-in experiencial",
-      "lead": "Un pequeño pedazo de Puglia para llevar.",
+      "lead": "Un pequeño pedazo de Apulia para llevar.",
       "body": [
-       "A su llegada, los invitados encuentran la recreación de un mercado tradicional de Puglia con una selección de productos típicos de la región. Durante el check-in pueden degustarlos y elegir sus cinco favoritos para llevárselos en una cesta de mimbre.",
+       "A su llegada, los invitados encuentran la recreación de un mercado tradicional de Apulia con una selección de productos típicos de la región. Durante el check-in pueden degustarlos y elegir sus cinco favoritos para llevárselos en una cesta de mimbre.",
        "Taralli, focaccia barese, aceitunas, tomates secos, quesos locales o almendras: una bienvenida que convierte la primera toma de contacto con el destino en una experiencia para descubrir, probar y elegir."
       ]
      },
@@ -1106,7 +988,7 @@ window.BCG_EVENTS = [
       "day": "Día 1 · 7 de octubre",
       "when": "Amenities",
       "title": "Amenities",
-      "lead": "Los regalos invitan a disfrutar Puglia a través de sus tradiciones: los bordados típicos, la cerámica y sus especias y aromas.",
+      "lead": "Los regalos invitan a disfrutar Apulia a través de sus tradiciones: los bordados típicos, la cerámica y sus especias y aromas.",
       "acts": [
        {
         "name": "Bordados hechos a mano",
@@ -1122,8 +1004,7 @@ window.BCG_EVENTS = [
         "imgs": [
          "assets/outing/p41-3a.jpg",
          "assets/outing/p41-3b.jpg",
-         "assets/outing/p41-3c.jpg",
-         "assets/outing/p41-3d.jpg"
+         "assets/outing/p41-3c.jpg"
         ]
        },
        {
@@ -1137,14 +1018,14 @@ window.BCG_EVENTS = [
        }
       ],
       "body": [
-       "A los regalos acompañará un tarjetón: «Prepárate para ver Puglia a través de los sentidos». Fragancias, sabores, siglos de historia y un sinfín de sensaciones para ver la región desde una perspectiva ultrasensorial."
+       "A los regalos acompañará un tarjetón: «Prepárate para ver Apulia a través de los sentidos». Fragancias, sabores, siglos de historia y un sinfín de sensaciones para ver la región desde una perspectiva ultrasensorial."
       ]
      },
      {
       "day": "Día 1 · 7 de octubre",
       "when": "Cena de bienvenida",
       "title": "Festa in Piazza",
-      "lead": "Vivir Puglia desde la tradición.",
+      "lead": "Vivir Apulia desde la tradición.",
       "body": [
        "Una recepción tradicional en la plaza principal de Borgo Village."
       ],
@@ -1196,7 +1077,7 @@ window.BCG_EVENTS = [
       "day": "Día 2 · 8 de octubre",
       "when": "Mañana · Experiencias",
       "title": "Actividades fuera del hotel",
-      "lead": "Porque existen muchas formas de ver Puglia.",
+      "lead": "Porque existen muchas formas de ver Apulia.",
       "acts": [
        {
         "name": "Barivecchia",
@@ -1496,19 +1377,21 @@ window.BCG_EVENTS = [
        "Pettolecchia La Fortezza domina la extensión de olivares que llega hasta la costa de Savelletri. El castillo, de 1450 y recientemente restaurado, es hoy un espacio exclusivo para eventos.",
        "Conocer su historia centenaria es conocer la de Apulia. Los aromas y sabores de la tradición, una copa de vino local y una velada en pleno corazón de la campiña apuliana."
       ],
-      "facts": [
-       {
-        "label": "Castillo",
-        "value": "1450"
-       }
-      ],
+      "video": "assets/video/paris2024.webm",
+      "videoWide": true,
       "imgs": [
        "assets/outing/p56-1a.jpg",
-       "assets/outing/p56-1b.jpg",
-       "assets/outing/fortress-dosel.jpg",
-       "assets/outing/fortress-drapeado.jpg"
+       "assets/outing/p56-1b.jpg"
       ],
       "lists": [
+       {
+        "title": "Espectáculo: una experiencia de altura",
+        "items": [
+         "Aprovechamos que el espacio es espectacular para recrear una actuación que aprovecha precisamente esa capacidad de mirar hacia arriba y descubrir a través de la altura y de las telas un espectáculo inesperado.",
+         "En determinado momento y para sorpresa de los asistentes, las telas se caerán, descubriendo a cantantes de ópera que salen de los balcones combinados con músicos de rock.",
+         "Una forma de ver la música y el arte desde una nueva perspectiva, elevando la mirada y fusionando dos disciplinas en un espectáculo único."
+        ]
+       },
        {
         "title": "Minutas de espejo",
         "items": [
@@ -1516,11 +1399,19 @@ window.BCG_EVENTS = [
         ]
        }
       ],
+      "galleryTitle": "¿Cómo lo vamos a hacer?",
       "gallery": [
+       "assets/outing/fortress-dosel.jpg",
+       "assets/outing/fortress-drapeado.jpg",
        "assets/outing/minuta-manos.jpg",
        "assets/outing/minuta-mesa.jpg"
       ],
-      "galleryTitle": "Minutas de espejo"
+      "galleryAr": [
+       1,
+       1,
+       0.563,
+       0.563
+      ]
      },
      {
       "day": "Día 3 · 9 de octubre",
@@ -1629,7 +1520,7 @@ window.BCG_EVENTS = [
        "cells": [
         [
          "Vuelos con llegada al aeropuerto de Menorca",
-         "Traslado al hotel en bus",
+         "Traslado al hotel en bus (30 min)",
          "Check-in en el Hotel Villa Le Blanc",
          "Propuesta de amenities"
         ],
@@ -1645,10 +1536,10 @@ window.BCG_EVENTS = [
        "label": "Cena",
        "cells": [
         [
-         "Cena en el hotel (patio central)"
+         "Cena en el hotel, La Terraza del Balear"
         ],
         [
-         "Traslado en bus (7 min)",
+         "Traslado en bus",
          "Cena de gala en Lithica, Pedreres de s’Hostal",
          "Experiencias"
         ],
@@ -1916,7 +1807,7 @@ window.BCG_EVENTS = [
       "assets/pdf/p63-2.jpg"
      ],
      [
-      "patio central",
+      "Terraza del Balear",
       "assets/pdf/p64-1.jpg"
      ],
      [
@@ -1931,78 +1822,6 @@ window.BCG_EVENTS = [
       "Subaida",
       "assets/pdf/p73-1.jpg"
      ]
-    ]
-   }
-  ],
-  "conceptImgs": [
-   {
-    "src": "assets/outing/mood-1.jpg",
-    "ar": 0.552
-   },
-   {
-    "src": "assets/outing/mood-4.jpg",
-    "ar": 1.517
-   },
-   {
-    "src": "assets/outing/mood-2.jpg",
-    "ar": 0.557
-   },
-   {
-    "src": "assets/outing/mood-3.jpg",
-    "ar": 0.774
-   },
-   {
-    "src": "assets/outing/mood-5.jpg",
-    "ar": 1.507
-   },
-   {
-    "src": "assets/outing/mood-6.jpg",
-    "ar": 0.587
-   }
-  ],
-  "conceptCols": [
-   {
-    "w": 138,
-    "items": [
-     {
-      "src": "assets/outing/mood-1.jpg",
-      "ar": 0.552
-     }
-    ]
-   },
-   {
-    "w": 164,
-    "items": [
-     {
-      "src": "assets/outing/mood-2.jpg",
-      "ar": 0.557
-     },
-     {
-      "src": "assets/outing/mood-3.jpg",
-      "ar": 0.774
-     }
-    ]
-   },
-   {
-    "w": 226,
-    "items": [
-     {
-      "src": "assets/outing/mood-4.jpg",
-      "ar": 1.517
-     },
-     {
-      "src": "assets/outing/mood-5.jpg",
-      "ar": 1.507
-     }
-    ]
-   },
-   {
-    "w": 148,
-    "items": [
-     {
-      "src": "assets/outing/mood-6.jpg",
-      "ar": 0.587
-     }
     ]
    }
   ],
@@ -2064,7 +1883,7 @@ window.BCG_EVENTS = [
   "fg": "#00270b",
   "tone": "ink",
   "meta": "17 dic 2027 · 536 invitados",
-  "desc": "Fiesta wow: cena de gala + fiesta + buffet. Opción 1: Starlite. Opción 2: Teatro Calderón + Lírico.",
+  "desc": "Fiesta wow: cena de gala + fiesta + buffet. Opción 1: Starlite. Opción 2: Autocine de Madrid. Opción 3: Quinta del Jarama + Lumentium. Opción 4: Teatro Calderón + Lírico.",
   "conceptTitle": "Una mirada diferente a la Navidad",
   "conceptLead": "La Navidad es una de las celebraciones con más códigos, símbolos y tradiciones establecidas. Precisamente por eso, proponemos reinterpretarla desde una mirada diferente.",
   "conceptBody": "Una celebración que huye de los tópicos visuales, los colores habituales y los iconos de siempre para construir una experiencia contemporánea, sorprendente y alineada con el espíritu inconformista de BCG. En lugar de centrarnos en lo que tradicionalmente vemos, pondremos el foco en aquello que realmente nos une: las emociones, los vínculos y los momentos compartidos, haciéndolos visibles a través de la creatividad, la escenografía y la experiencia. Un universo diseñado para transformar el espacio y llenarlo de nuevas perspectivas.",
@@ -2088,10 +1907,17 @@ window.BCG_EVENTS = [
    },
    {
     "label": "Lugar · Opción 2",
+    "value": "Autocine de Madrid"
+   },
+   {
+    "label": "Lugar · Opción 3",
+    "value": "Quinta del Jarama + Lumentium"
+   },
+   {
+    "label": "Lugar · Opción 4",
     "value": "Teatro Calderón + Lírico"
    }
   ],
-  "conceptImg": "assets/navidad/concept.jpg",
   "banner": "assets/navidad/mb-1.jpg",
   "options": [
    {
@@ -2101,7 +1927,7 @@ window.BCG_EVENTS = [
     "place": "IFEMA Madrid",
     "name": "Starlite",
     "hero": "assets/navidad/starlite-zona.jpg",
-    "heroMax": "420px",
+    "heroMax": "640px",
     "heroAr": "16 / 10",
     "dest": {
      "title": "Starlite Christmas",
@@ -2141,8 +1967,7 @@ window.BCG_EVENTS = [
       ],
       "imgs": [
        "assets/navidad/starlite-decoracion.jpg"
-      ],
-      "mediaMax": "420px"
+      ]
      },
      {
       "day": "17 de diciembre",
@@ -2154,8 +1979,7 @@ window.BCG_EVENTS = [
       ],
       "imgs": [
        "assets/navidad/starlite-lienzo.jpg"
-      ],
-      "mediaMax": "440px"
+      ]
      },
      {
       "day": "17 de diciembre",
@@ -2166,8 +1990,7 @@ window.BCG_EVENTS = [
       ],
       "imgs": [
        "assets/navidad/starlite-concierto.jpg"
-      ],
-      "mediaMax": "440px"
+      ]
      },
      {
       "day": "17 de diciembre",
@@ -2179,95 +2002,132 @@ window.BCG_EVENTS = [
       ],
       "imgs": [
        "assets/navidad/starlite-lounge.jpg"
+      ]
+     }
+    ]
+   },
+   {
+    "key": "autocine",
+    "tag": "Opción 2",
+    "short": "Autocine",
+    "place": "Autocine de Madrid · The Garage",
+    "name": "Autocine de Madrid",
+    "dest": {
+     "title": "La Navidad como nunca antes la habías vivido",
+     "imgs": [],
+     "body": [
+      "Rompamos con lo establecido para imaginar una nueva forma de celebrar. ¿Y si la Navidad no tuviera que parecer Navidad?",
+      "El garaje del Autocine nos ofrece la posibilidad de partir de un espacio sin una identidad navideña predeterminada para construir algo completamente diferente. Un entorno industrial, versátil y contemporáneo que permite alejarnos de los escenarios convencionales y convertir la creatividad en el principal elemento de transformación.",
+      "A través de una propuesta escenográfica y audiovisual diseñada a medida, podemos crear un universo propio, donde los códigos tradicionales dejan paso a nuevas formas de expresión y donde la arquitectura, la luz, el arte y la interacción entre las personas construyen una experiencia inesperada.",
+      "Un espacio que no viene definido por lo que tradicionalmente esperamos de una celebración navideña, sino por todo lo que somos capaces de imaginar cuando nos atrevemos a mirar desde otra perspectiva.",
+      "Territorio conceptual: la creatividad, la ruptura con los convencionalismos y la libertad de reinterpretar la Navidad."
+     ]
+    }
+   },
+   {
+    "key": "jarama",
+    "tag": "Opción 3",
+    "short": "Quinta del Jarama",
+    "place": "Quinta del Jarama + Lumentium",
+    "name": "Quinta del Jarama",
+    "hero": "assets/navidad/jarama-exterior.jpg",
+    "heroMax": "760px",
+    "heroAr": "17 / 6",
+    "dest": {
+     "title": "La Navidad como experiencia sensorial",
+     "imgs": [
+      "assets/navidad/jarama-salon.jpg"
+     ],
+     "body": [
+      "Un espacio donde cambiar la forma de mirar para descubrir nuevas emociones.",
+      "La Navidad tiene la capacidad de despertar emociones únicas, pero no siempre es necesario recurrir a los símbolos de siempre para sentirlas. Proponemos transformar la Quinta del Jarama en un universo sensorial donde la luz, la música y la escenografía se conviertan en herramientas para reinterpretar la celebración.",
+      "A través de Lumentium, el espacio se transforma en un escenario envolvente, capaz de sorprender y generar nuevas perspectivas. Una experiencia donde la emoción no viene dada por los códigos tradicionales de la Navidad, sino por la capacidad de crear momentos inesperados y compartirlos con los demás.",
+      "Una invitación a descubrir que, cuando cambiamos el entorno y la manera de percibirlo, también cambia nuestra forma de celebrar.",
+      "Territorio conceptual: la sorpresa, la emoción y la transformación de los sentidos."
+     ]
+    },
+    "moments": [
+     {
+      "day": "17 de diciembre",
+      "when": "La cena",
+      "title": "Otra forma de vivir la luz",
+      "lead": "La Navidad es luz por excelencia. Por ello proponemos otra forma de vivir la luz y sus posibilidades.",
+      "body": [
+       "Lumentium es una empresa especializada en table mapping: un selecto equipo de profesionales y artistas enfocados a la creación de experiencias en las que se mezclan la alta tecnología y el video mapping en un mismo espacio.",
+       "Desarrolladores de proyectos como «Global Dinner» y «Lumentium Showcooking», experiencias innovadoras donde la gastronomía se funde en sincronía con ambientes virtuales y puestas en escena impactantes."
       ],
-      "mediaMax": "420px"
+      "imgs": [
+       "assets/navidad/lumentium-1.jpg",
+       "assets/navidad/lumentium-2.jpg"
+      ],
+      "video": "assets/video/lumentium.webm",
+      "videoWide": true
      }
     ]
    },
    {
     "key": "calderon",
-    "tag": "Opción 2",
+    "tag": "Opción 4",
     "short": "Calderón",
     "place": "Teatro Calderón + Lírico",
-    "name": "Teatro Calderón"
-   }
-  ],
-  "conceptImgs": [
-   {
-    "src": "assets/navidad/mood-1.jpg",
-    "ar": 1.512
-   },
-   {
-    "src": "assets/navidad/mood-2.jpg",
-    "ar": 0.891
-   },
-   {
-    "src": "assets/navidad/mood-4.jpg",
-    "ar": 0.686
-   },
-   {
-    "src": "assets/navidad/mood-3.jpg",
-    "ar": 0.619
-   },
-   {
-    "src": "assets/navidad/mood-5.jpg",
-    "ar": 0.715
-   },
-   {
-    "src": "assets/navidad/mood-6.jpg",
-    "ar": 0.706
+    "name": "Teatro Calderón",
+    "hero": "assets/navidad/calderon-sala.jpg",
+    "heroMax": "640px",
+    "heroAr": "3 / 2",
+    "dest": {
+     "title": "La Navidad como otra forma de ver lo que nos une",
+     "imgs": [],
+     "body": [
+      "El Teatro Calderón es un lugar para contar la vida desde distintos puntos de vista y descubrir así nuevas historias. Un espacio donde la realidad se transforma y una misma historia puede adquirir infinitos significados dependiendo de cómo se cuente, quién la interprete y desde dónde se contemple.",
+      "El Teatro Calderón nos permite trasladar esta idea a la celebración navideña, sustituyendo los códigos habituales por una experiencia cultural capaz de sorprender, emocionar y conectar a través de diferentes universos escénicos.",
+      "Su programación de musicales abre la puerta a múltiples posibilidades, permitiéndonos elegir la historia que mejor encaje con el espíritu de BCG y convertir la velada en una experiencia que vaya más allá de la celebración convencional.",
+      "Porque, al igual que en un musical, lo verdaderamente especial no es solo lo que sucede en escena, sino las emociones que despierta y los recuerdos que construye entre quienes lo comparten.",
+      "Territorio conceptual: las historias, las emociones compartidas y las nuevas formas de interpretar la tradición."
+     ]
+    },
+    "moments": [
+     {
+      "day": "17 de diciembre",
+      "when": "La función",
+      "title": "Un musical a elegir",
+      "body": [
+       "Musicales en cartel para 2026; la selección final se confirmará con la cartelera de 2027."
+      ],
+      "lists": [
+       {
+        "title": "Cartelera a elegir",
+        "items": [
+         "La Familia Addams",
+         "Christmas Dreams"
+        ]
+       }
+      ],
+      "facts": [
+       {
+        "label": "Duración",
+        "value": "2 h 20 min"
+       },
+       {
+        "label": "Funciones los viernes",
+        "value": "17:00 y 21:00 h"
+       }
+      ]
+     },
+     {
+      "day": "17 de diciembre",
+      "when": "Después",
+      "title": "Espacio Lírico",
+      "body": [
+       "Una vez finalizada la función, subimos al Espacio Lírico para disfrutar de la cena, con posterior barra libre y DJ."
+      ]
+     }
+    ]
    }
   ],
   "secLabels": {
    "destino": "Espacio",
    "momentos": "La noche"
   },
-  "conceptCols": [
-   {
-    "w": 384,
-    "items": [
-     {
-      "src": "assets/navidad/mood-1.jpg",
-      "ar": 1.512
-     }
-    ]
-   },
-   {
-    "w": 213,
-    "items": [
-     {
-      "src": "assets/navidad/mood-2.jpg",
-      "ar": 0.891
-     },
-     {
-      "src": "assets/navidad/mood-3.jpg",
-      "ar": 0.619
-     }
-    ]
-   },
-   {
-    "w": 203,
-    "items": [
-     {
-      "src": "assets/navidad/mood-4.jpg",
-      "ar": 0.686
-     },
-     {
-      "src": "assets/navidad/mood-5.jpg",
-      "ar": 0.715
-     }
-    ]
-   },
-   {
-    "w": 209,
-    "items": [
-     {
-      "src": "assets/navidad/mood-6.jpg",
-      "ar": 0.706
-     }
-    ]
-   }
-  ],
   "conceptBoard": {
    "ar": 1.7756,
    "items": [
@@ -2339,7 +2199,6 @@ window.BCG_EVENTS = [
    {
     "kicker": "Icono",
     "title": "El Cubo BCG",
-    "img": "assets/navidad/mb-3.jpg",
     "body": [
      "En la Navidad predominan las formas circulares: las bolas del árbol, los copos de nieve. Nuestro icono es un cubo que añade una nueva dimensión a la forma de sentir y compartir la Navidad, sobre el que proyectar imágenes, frases y texturas que inspiran."
     ]
