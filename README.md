@@ -18,6 +18,6 @@ python3 -m http.server
 
 ## Structure
 - `index.html` — microsite
-- `proposals-data-v3.js` — proposal content (texts, images)
+- `proposals-data-v4.js` — proposal content (texts, images, moodboard videos)
 - `support.js`, `liquid-pond.js`, `zen-audio-v3.js`, `image-slot.js`, `ios-frame.jsx` — runtime and effects
 - `assets/` — images, video, audio, logos and the credentials PDF
