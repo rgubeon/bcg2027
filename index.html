@@ -102,6 +102,11 @@
     </button>
   </div>
 
+<button onClick="{{ skipConcept }}" aria-label="Saltar desarrollo conceptual" style="position:fixed; right:clamp(20px,1.8vw,32px); bottom:24px; z-index:42; display:flex; align-items:center; gap:14px; height:48px; padding:0 26px; box-sizing:border-box; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 20%, transparent); background:color-mix(in srgb, var(--glass) 34%, transparent); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); color:var(--ink); cursor:pointer; font:700 11px/1 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; white-space:nowrap; opacity:{{ skipOpacity }}; pointer-events:{{ skipPE }}; transform:{{ skipTransform }}; transition:opacity 700ms cubic-bezier(.22,.61,.36,1), transform 900ms cubic-bezier(.22,.61,.36,1), border-color 400ms cubic-bezier(.22,.61,.36,1), background-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="border-color:color-mix(in srgb, var(--accent) 60%, transparent); background:color-mix(in srgb, var(--glass) 60%, transparent)">
+  <i class="fa-solid fa-forward" style="width:16px; font-size:12px; line-height:1; text-align:center; color:var(--accent)"></i>
+  <span>Saltar desarrollo conceptual</span>
+</button>
+
 <nav style="position:fixed; left:50%; bottom:16px; z-index:41; display:{{ tabsDisplay }}; transform:{{ tabsTransform }}; opacity:{{ tabsOpacity }}; pointer-events:{{ tabsPE }}; transition:opacity 700ms cubic-bezier(.22,.61,.36,1), transform 900ms cubic-bezier(.22,.61,.36,1); gap:4px; padding:5px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 20%, transparent); background:color-mix(in srgb, var(--glass) 40%, transparent); backdrop-filter:blur(22px) saturate(150%); -webkit-backdrop-filter:blur(22px) saturate(150%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent), 0 18px 50px color-mix(in srgb, var(--ink) 10%, transparent)">
   <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
     <button onClick="{{ t.onClick }}" style="display:flex; align-items:center; gap:10px; height:44px; padding:0 {{ t.pad }}; border-radius:999px; border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.color }}; cursor:pointer; white-space:nowrap; font:700 11px/1 var(--font-sans); letter-spacing:.14em; text-transform:uppercase; transition:background-color 700ms cubic-bezier(.22,.61,.36,1), color 700ms cubic-bezier(.22,.61,.36,1), border-color 700ms cubic-bezier(.22,.61,.36,1)" style-hover="color:var(--ink)">
@@ -433,7 +438,7 @@
     </div>
   </section>
 
-  <section style="padding:clamp(110px,18vh,200px) var(--gr, clamp(20px,6vw,88px)) clamp(140px,22vh,240px) var(--gl, clamp(20px,6vw,88px))">
+  <section id="briefing" style="padding:clamp(110px,18vh,200px) var(--gr, clamp(20px,6vw,88px)) clamp(140px,22vh,240px) var(--gl, clamp(20px,6vw,88px))">
     <div style="max-width:1240px; margin:0 auto; display:flex; flex-direction:column; gap:clamp(48px,8vh,90px)">
       <div style="display:flex; flex-direction:column; gap:28px">
         <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">Briefing</div>
@@ -446,7 +451,7 @@
             <span style="flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:12px">
               <span style="display:flex; flex-wrap:wrap; gap:6px 24px; font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)"><span>{{ c.date }}</span><span>{{ c.guests }}</span></span>
               <span style="font-family:var(--font-serif); font-size:clamp(30px,4.2vw,68px); line-height:1; letter-spacing:-.022em">{{ c.name }}</span>
-              <span style="max-width:62ch; font:400 15px/1.55 var(--font-sans); color:color-mix(in srgb, var(--ink) 72%, transparent); text-wrap:pretty">{{ c.brief }}</span>
+              <span style="max-width:62ch; font:400 15px/1.55 var(--font-sans); color:color-mix(in srgb, var(--ink) 72%, transparent); text-wrap:pretty; white-space:pre-line">{{ c.brief }}</span>
             </span>
             <span style="flex:none; width:48px; height:48px; box-sizing:border-box; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 26%, transparent); background:color-mix(in srgb, var(--glass) 30%, transparent); color:var(--ink); display:flex; align-items:center; justify-content:center"><i class="fa-solid fa-arrow-down" style="display:block; width:1.25em; height:1em; line-height:1; text-align:center; font-size:13px;  text-align:center; color:currentColor"></i></span>
           </button>
@@ -467,7 +472,7 @@
             <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">Propuesta {{ p.num }} / 03</div>
             <h2 data-fx="" data-ripple="1.4" style="margin:0; max-width:13ch; font-family:var(--font-serif); font-weight:400; font-size:clamp(62px,11vw,190px); line-height:.94; letter-spacing:-.035em; color:var(--ink)">{{ p.name }}</h2>
             <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)">{{ p.meta }}</div>
-            <p data-fx="" style="margin:0; max-width:59ch; font:400 clamp(17px,1.5vw,21px)/1.65 var(--font-sans); color:color-mix(in srgb, var(--ink) 80%, transparent); text-wrap:pretty">{{ p.desc }}</p>
+            <p data-fx="" style="margin:0; max-width:59ch; font:400 clamp(17px,1.5vw,21px)/1.65 var(--font-sans); color:color-mix(in srgb, var(--ink) 80%, transparent); text-wrap:pretty; white-space:pre-line">{{ p.desc }}</p>
           </div>
         </section>
 
@@ -1931,6 +1936,9 @@ class Component extends DCLogic {
     const pr = document.getElementById('proposals'), cr = document.getElementById('credentials');
     if (!pr || !cr) return;
     const inProps = pr.getBoundingClientRect().top < vh * 0.5 && cr.getBoundingClientRect().top > vh * 0.5;
+    const cb = document.querySelector('[data-scene="cube"]'), bf = document.getElementById('briefing');
+    const inConcept = !!(cb && bf) && cb.getBoundingClientRect().top < vh * 0.5 && bf.getBoundingClientRect().top > vh * 0.85;
+    if (inConcept !== this.state.inConcept) this.setState({ inConcept });
     const id = EV[this.state.ev].id;
     let sec = '';
     const E = EV[this.state.ev], SS = this.secsFor(E);
@@ -1998,6 +2006,21 @@ class Component extends DCLogic {
         this.setState({ leap: false });
         this._leaping = false;
         this.drop(window.innerWidth / 2, window.innerHeight * 0.45, 1.4);
+      }));
+    }, 720);
+  }
+
+  /* same dissolve as leapTop, landing on an element instead of the top */
+  leapTo(el) {
+    if (!el || this._leaping) return;
+    this._leaping = true;
+    this.setState({ leap: true, musicOpen: false });
+    setTimeout(() => {
+      this.jumpTo(el);
+      this._fxDirty = true;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        this.setState({ leap: false });
+        this._leaping = false;
       }));
     }, 720);
   }
@@ -2316,6 +2339,9 @@ class Component extends DCLogic {
       toTop: (e) => { if (e) e.preventDefault(); this.leapTop(); },
       leapOpacity: st.leap ? '0' : '1', leapFilter: st.leap ? 'blur(12px)' : 'none',
       goProposals: (e) => { if (e) e.preventDefault(); const el = document.getElementById('proposals'); if (el) this.scrollTo(el, 0); },
+      skipConcept: () => this.leapTo(document.getElementById('briefing')),
+      skipOpacity: st.entered && st.inConcept ? '1' : '0', skipPE: st.entered && st.inConcept ? 'auto' : 'none',
+      skipTransform: st.entered && st.inConcept ? 'translateY(0)' : 'translateY(14px)',
       goCredentials: (e) => { if (e) e.preventDefault(); const el = document.getElementById('credentials'); if (el) this.scrollTo(el, 0); },
 
       tabsDisplay: w >= 1100 ? 'none' : 'flex',
