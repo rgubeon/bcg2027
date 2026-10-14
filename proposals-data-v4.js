@@ -211,6 +211,8 @@ window.BCG_EVENTS = [
       "day": "Día 2 · 1 de julio",
       "when": "Mañana y tarde · Experiencias",
       "title": "Trafalgar Polo Club",
+      "actsSplit": "1,2,2",
+      "actsRow": true,
       "lead": "Actividades para ver y sentir el entorno de forma plena.",
       "body": [
        "Una finca privada de polo y playa en Finca Mangueta, cerca de El Palmar, en Vejer de la Frontera: un campo de polo de hierba de tamaño completo con juego todo el año y acceso directo a la Playa de la Mangueta.",
@@ -236,8 +238,15 @@ window.BCG_EVENTS = [
       "acts": [
        {
         "name": "Polo Experience",
+        "feature": true,
+        "cardsTitle": "El tarjetón",
+        "cards": [
+         { "src": "assets/summer/polo-tarjeton-mockup.jpg", "ar": "4 / 3" },
+         { "src": "assets/summer/polo-tarjeton-anverso.jpg", "ar": "1055 / 1491" },
+         { "src": "assets/summer/polo-tarjeton-reverso.jpg", "ar": "1055 / 1491" }
+        ],
         "line": "Elegancia, adrenalina y tradición.",
-        "body": "Una jornada en torno a uno de los deportes más exclusivos del mundo: la velocidad de los caballos, la destreza de los jugadores y la emoción de un juego en el que cada jugada puede cambiar el resultado. Los invitados viven el partido desde una zona de hospitalidad diseñada para la ocasión y, en el descanso, copa en mano, saltan al campo para el tradicional pisado de césped. Lo acompaña un tarjetón en el que la palabra POLO se repite y entrelaza: «Prepárate para ver el mundo del polo desde todas las perspectivas».",
+        "body": "Antes de la experiencia, en la habitación, recibirán un tarjetón que simboliza en sí mismo el ver el polo desde distintas perspectivas. Una jornada en torno a uno de los deportes más exclusivos del mundo: la velocidad de los caballos, la destreza de los jugadores y la emoción de un juego en el que cada jugada puede cambiar el resultado. Los invitados viven el partido desde una zona de hospitalidad diseñada para la ocasión y, en el descanso, copa en mano, saltan al campo para el tradicional pisado de césped. Lo acompaña un tarjetón en el que la palabra POLO se repite y entrelaza: «Prepárate para ver el mundo del polo desde todas las perspectivas».",
         "includes": [
          "Identidad y escudo propios",
          "Speaker especializado",
@@ -803,7 +812,7 @@ window.BCG_EVENTS = [
   "bg": "#00270b",
   "fg": "#ffffff",
   "tone": "light",
-  "meta": "7 – 9 oct 2027 · 75 invitados",
+  "meta": "21 – 23 oct / 7 – 9 oct 2027 · 75 invitados",
   "desc": "Cena de alto nivel en un espacio diferencial. Opción 1: Apulia. Opción 2: Menorca.",
   "conceptTitle": "Algunas cosas solo se revelan cuando se observa más allá de ellas",
   "conceptLead": "Por eso creamos un universo de transparencias, capas y profundidades donde nada se muestra de una sola manera y donde cada mirada aporta una nueva lectura.",
@@ -816,7 +825,7 @@ window.BCG_EVENTS = [
    },
    {
     "label": "Fechas",
-    "value": "7, 8 y 9 de octubre"
+    "value": "Apulia: 21, 22 y 23 de octubre · Menorca: 7, 8 y 9 de octubre"
    },
    {
     "label": "Objetivo",
@@ -841,9 +850,9 @@ window.BCG_EVENTS = [
     "name": "Apulia",
     "agenda": {
      "days": [
-      "7 de octubre",
-      "8 de octubre",
-      "9 de octubre"
+      "21 de octubre",
+      "22 de octubre",
+      "23 de octubre"
      ],
      "rows": [
       {
@@ -975,17 +984,21 @@ window.BCG_EVENTS = [
     },
     "moments": [
      {
-      "day": "Día 1 · 7 de octubre",
+      "day": "Día 1 · 21 de octubre",
       "when": "Llegada",
       "title": "Check-in experiencial",
       "lead": "Un pequeño pedazo de Apulia para llevar.",
+      "imgs": [
+       "assets/outing/checkin-mercado.jpg",
+       "assets/outing/checkin-cesta.jpg"
+      ],
       "body": [
        "A su llegada, los invitados encuentran la recreación de un mercado tradicional de Apulia con una selección de productos típicos de la región. Durante el check-in pueden degustarlos y elegir sus cinco favoritos para llevárselos en una cesta de mimbre.",
        "Taralli, focaccia barese, aceitunas, tomates secos, quesos locales o almendras: una bienvenida que convierte la primera toma de contacto con el destino en una experiencia para descubrir, probar y elegir."
       ]
      },
      {
-      "day": "Día 1 · 7 de octubre",
+      "day": "Día 1 · 21 de octubre",
       "when": "Amenities",
       "title": "Amenities",
       "lead": "Los regalos invitan a disfrutar Apulia a través de sus tradiciones: los bordados típicos, la cerámica y sus especias y aromas.",
@@ -1022,7 +1035,7 @@ window.BCG_EVENTS = [
       ]
      },
      {
-      "day": "Día 1 · 7 de octubre",
+      "day": "Día 1 · 21 de octubre",
       "when": "Cena de bienvenida",
       "title": "Festa in Piazza",
       "lead": "Vivir Apulia desde la tradición.",
@@ -1074,7 +1087,7 @@ window.BCG_EVENTS = [
       "collapse": true
      },
      {
-      "day": "Día 2 · 8 de octubre",
+      "day": "Día 2 · 22 de octubre",
       "when": "Mañana · Experiencias",
       "title": "Actividades fuera del hotel",
       "lead": "Porque existen muchas formas de ver Apulia.",
@@ -1263,7 +1276,7 @@ window.BCG_EVENTS = [
       ]
      },
      {
-      "day": "Día 2 · 8 de octubre",
+      "day": "Día 2 · 22 de octubre",
       "when": "Tarde · Experiencias",
       "title": "Actividades en el hotel",
       "imgs": [
@@ -1369,7 +1382,7 @@ window.BCG_EVENTS = [
       ]
      },
      {
-      "day": "Día 2 · 8 de octubre",
+      "day": "Día 2 · 22 de octubre",
       "when": "Cena de gala",
       "title": "The Fortress",
       "lead": "Un lugar para verse envuelto en la historia de Apulia.",
@@ -1379,6 +1392,7 @@ window.BCG_EVENTS = [
       ],
       "video": "assets/video/paris2024.webm",
       "videoWide": true,
+      "videoBelow": true,
       "imgs": [
        "assets/outing/p56-1a.jpg",
        "assets/outing/p56-1b.jpg"
@@ -1414,7 +1428,7 @@ window.BCG_EVENTS = [
       ]
      },
      {
-      "day": "Día 3 · 9 de octubre",
+      "day": "Día 3 · 23 de octubre",
       "when": "Comida de despedida",
       "title": "Comida de despedida",
       "lead": "Dos opciones para convertir una despedida en toda una experiencia sensorial.",
@@ -2022,9 +2036,15 @@ window.BCG_EVENTS = [
     "short": "Autocine",
     "place": "Autocine de Madrid · The Garage",
     "name": "Autocine de Madrid",
+    "hero": "assets/navidad/autocine-aerea.jpg",
+    "heroMax": "640px",
+    "heroAr": "4 / 3",
     "dest": {
      "title": "La Navidad como nunca antes la habías vivido",
-     "imgs": [],
+     "imgs": [
+      "assets/navidad/autocine-cena.jpg",
+      "assets/navidad/autocine-feria.jpg"
+     ],
      "body": [
       "Rompamos con lo establecido para imaginar una nueva forma de celebrar. ¿Y si la Navidad no tuviera que parecer Navidad?",
       "El garaje del Autocine nos ofrece la posibilidad de partir de un espacio sin una identidad navideña predeterminada para construir algo completamente diferente. Un entorno industrial, versátil y contemporáneo que permite alejarnos de los escenarios convencionales y convertir la creatividad en el principal elemento de transformación.",
@@ -2038,6 +2058,13 @@ window.BCG_EVENTS = [
       "day": "17 de diciembre",
       "when": "La experiencia",
       "title": "Cuando el cine cobra vida",
+      "video": "assets/video/autocine-garage.webm",
+      "videoWide": true,
+      "videoOnly": true,
+      "listsInMedia": true,
+      "imgs": [
+       "assets/video/autocine-garage.jpg"
+      ],
       "lead": "O cómo ver la Navidad desde otro escenario.",
       "body": [
        "En el Autocine, la magia del cine va a traspasar la pantalla.",
@@ -2064,13 +2091,13 @@ window.BCG_EVENTS = [
     "short": "Quinta del Jarama",
     "place": "Quinta del Jarama + Lumentium",
     "name": "Quinta del Jarama",
-    "hero": "assets/navidad/jarama-exterior.jpg",
+    "hero": "assets/navidad/jarama-exterior-hq.jpg",
     "heroMax": "760px",
-    "heroAr": "17 / 6",
+    "heroAr": "2 / 1",
     "dest": {
      "title": "La Navidad como experiencia sensorial",
      "imgs": [
-      "assets/navidad/jarama-salon.jpg"
+      "assets/navidad/jarama-salon-hq.jpg"
      ],
      "body": [
       "Un espacio donde cambiar la forma de mirar para descubrir nuevas emociones.",
@@ -2105,12 +2132,14 @@ window.BCG_EVENTS = [
     "short": "Calderón",
     "place": "Teatro Calderón + Lírico",
     "name": "Teatro Calderón",
-    "hero": "assets/navidad/calderon-sala.jpg",
+    "hero": "assets/navidad/calderon-sala-hq.jpg",
     "heroMax": "640px",
     "heroAr": "3 / 2",
     "dest": {
      "title": "La Navidad como otra forma de ver lo que nos une",
-     "imgs": [],
+     "imgs": [
+      "assets/navidad/calderon-vestibulo.jpg"
+     ],
      "body": [
       "El Teatro Calderón es un lugar para contar la vida desde distintos puntos de vista y descubrir así nuevas historias. Un espacio donde la realidad se transforma y una misma historia puede adquirir infinitos significados dependiendo de cómo se cuente, quién la interprete y desde dónde se contemple.",
       "El Teatro Calderón nos permite trasladar esta idea a la celebración navideña, sustituyendo los códigos habituales por una experiencia cultural capaz de sorprender, emocionar y conectar a través de diferentes universos escénicos.",
@@ -2124,6 +2153,11 @@ window.BCG_EVENTS = [
       "day": "17 de diciembre",
       "when": "La función",
       "title": "Un musical a elegir",
+      "mosaicPattern": "posters",
+      "imgs": [
+       "assets/navidad/musical-addams.jpg",
+       "assets/navidad/musical-christmas-dreams.jpg"
+      ],
       "body": [
        "Musicales en cartel para 2026; la selección final se confirmará con la cartelera de 2027."
       ],
@@ -2151,6 +2185,11 @@ window.BCG_EVENTS = [
       "day": "17 de diciembre",
       "when": "Después",
       "title": "Espacio Lírico",
+      "imgs": [
+       "assets/navidad/lirico-sala.jpg",
+       "assets/navidad/lirico-terraza.jpg",
+       "assets/navidad/lirico-reloj.jpg"
+      ],
       "body": [
        "Una vez finalizada la función, subimos al Espacio Lírico para disfrutar de la cena, con posterior barra libre y DJ."
       ]
@@ -2160,7 +2199,9 @@ window.BCG_EVENTS = [
   ],
   "secLabels": {
    "destino": "Espacio",
-   "momentos": "La noche"
+   "momentos": "La experiencia",
+   "experiencias": "Activaciones",
+   "xpHeading": "Activaciones"
   },
   "conceptBoard": {
    "ar": 1.7756,
@@ -2215,6 +2256,9 @@ window.BCG_EVENTS = [
    {
     "kicker": "Pre evento",
     "title": "Deseos fuera de lo común",
+    "imgs": [
+     "assets/navidad/xp-deseos-movil.jpg"
+    ],
     "body": [
      "Antes de la fiesta, a través de una plataforma interna, los empleados comparten sus deseos para 2027: originales, inesperados y con mucho sentido del humor. Sus propuestas dan vida a la experiencia durante la noche."
     ]
@@ -2223,20 +2267,10 @@ window.BCG_EVENTS = [
     "kicker": "Fotocall",
     "title": "Fotocall de deseos extraordinarios",
     "imgs": [
-     "assets/navidad/xp-fotomaton-a.jpg",
-     "assets/navidad/xp-fotomaton-b.jpg",
-     "assets/navidad/xp-photocall-b.jpg",
-     "assets/navidad/xp-photocall-a.jpg",
-     "assets/navidad/xp-photocall-c.jpg"
+     "assets/navidad/xp-photocall-b.jpg"
     ],
     "body": [
      "Un fotocall interactivo detecta a los asistentes y proyecta sobre sus cabezas una nube de pensamiento con uno de los deseos recibidos, de forma aleatoria. Cada foto es una mirada diferente a lo que esperamos del nuevo año, y quien consiga fotografiarse con su propio deseo recibe un premio."
-    ],
-    "links": [
-     {
-      "label": "Referencia tecnológica",
-      "url": "https://www.cubensisproject.com/photocall-personalizado-interactivo/"
-     }
     ]
    },
    {

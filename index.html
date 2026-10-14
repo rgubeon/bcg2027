@@ -22,7 +22,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="liquid-pond.js"></script>
   <script src="zen-audio-v3.js"></script>
-  <script src="proposals-data-v4.js"></script>
+  <script src="proposals-data-v4.js?v=1014i"></script>
   <style>
     html { scrollbar-width: none; background: #e9f7ec; overflow-anchor: none; }
     body { overflow-anchor: none; }
@@ -149,7 +149,7 @@
       <div style="display:flex; align-items:center; gap:14px">
         <x-import component-from-global-scope="BCGBeonWWOMDesignSystem_0a75c3.Wordmark" tone="{{ wmTone }}" height="{{ n18 }}" hint-size="72px,18px"></x-import>
         <span style="font:400 14px/1 var(--font-sans); color:color-mix(in srgb, var(--ink) 72%, transparent)">×</span>
-        <x-import component-from-global-scope="BCGBeonWWOMDesignSystem_0a75c3.BeonMark" tone="{{ bmTone }}" height="{{ n20 }}" hint-size="66px,20px"></x-import>
+        <x-import component-from-global-scope="BCGBeonWWOMDesignSystem_0a75c3.BeonMark" tone="{{ bmTone }}" height="{{ n30 }}" hint-size="100px,30px"></x-import>
       </div>
       <div style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">Solicitud de propuesta · 2027</div>
       <h1 style="margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(42px, min(6.6vw, 13vh), 104px); line-height:1.02; letter-spacing:-.025em; color:var(--ink); text-wrap:balance">Mejor con sonido</h1>
@@ -520,8 +520,21 @@
               <h3 data-fx="" style="display:{{ p.infoDisplay }}; margin:0; max-width:36ch; font-family:var(--font-serif); font-weight:400; font-size:clamp(30px,3.6vw,56px); line-height:1.1; letter-spacing:-.02em; color:var(--ink); text-wrap:balance">{{ p.infoBody }}</h3>
             </div>
             <div data-cols="200" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr)); column-gap:clamp(24px,3vw,48px)">
-              <sc-for list="{{ p.specs }}" as="s" hint-placeholder-count="8">
+              <sc-for list="{{ p.specsMain }}" as="s" hint-placeholder-count="3">
                 <div data-fx="" style="display:flex; flex-direction:column; gap:14px; padding:24px 0 40px; border-top:1px solid color-mix(in srgb, var(--ink) 20%, transparent)">
+                  <span style="display:flex; align-items:center; gap:12px; font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)"><span style="flex:none; width:38px; height:38px; box-sizing:border-box; border-radius:999px; display:flex; align-items:center; justify-content:center; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 40%, transparent)"><i class="fa-solid {{ s.icon }}" style="display:block; width:1.25em; height:1em; line-height:1; text-align:center; font-size:13px;  color:var(--accent)"></i></span>{{ s.label }}</span>
+                  <span style="font-family:var(--font-serif); font-size:clamp(21px,1.8vw,26px); line-height:1.25; letter-spacing:-.01em; color:var(--ink); text-wrap:pretty">{{ s.value }}</span>
+                  <sc-if value="{{ s.hasImg }}" hint-placeholder-val="{{ false }}">
+                    <div onClick="{{ s.onClick }}" data-cursor="Ver" style="position:relative; width:100%; aspect-ratio:16 / 10; margin-top:6px; border-radius:16px; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 24px 60px color-mix(in srgb, var(--ink) 9%, transparent)">
+                      <img decoding="async" loading="lazy" src="{{ s.img }}" alt="{{ s.value }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:{{ p.specsOptDisplay }}; grid-auto-flow:column; grid-auto-columns:minmax(min(230px,72vw),1fr); column-gap:clamp(18px,2.4vw,40px); overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; scroll-snap-type:x mandatory">
+              <sc-for list="{{ p.specsOpt }}" as="s" hint-placeholder-count="0">
+                <div data-fx="" style="scroll-snap-align:start; display:flex; flex-direction:column; gap:14px; padding:24px 0 40px; border-top:1px solid color-mix(in srgb, var(--ink) 20%, transparent)">
                   <span style="display:flex; align-items:center; gap:12px; font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)"><span style="flex:none; width:38px; height:38px; box-sizing:border-box; border-radius:999px; display:flex; align-items:center; justify-content:center; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 40%, transparent)"><i class="fa-solid {{ s.icon }}" style="display:block; width:1.25em; height:1em; line-height:1; text-align:center; font-size:13px;  color:var(--accent)"></i></span>{{ s.label }}</span>
                   <span style="font-family:var(--font-serif); font-size:clamp(21px,1.8vw,26px); line-height:1.25; letter-spacing:-.01em; color:var(--ink); text-wrap:pretty">{{ s.value }}</span>
                   <sc-if value="{{ s.hasImg }}" hint-placeholder-val="{{ false }}">
@@ -538,9 +551,9 @@
         <section id="{{ p.secXp }}" style="display:{{ p.xpDisplay }}; padding:clamp(90px,14vh,160px) var(--gr, clamp(20px,6vw,88px)) clamp(90px,14vh,160px) var(--gl, clamp(20px,6vw,88px))">
           <div style="max-width:1240px; margin:0 auto; display:flex; flex-direction:column; gap:clamp(40px,7vh,80px)">
             <div style="display:flex; flex-direction:column; gap:28px">
-              <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">La experiencia</div>
+              <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">{{ p.xpLabel }}</div>
             </div>
-            <div data-cols="245" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:clamp(14px,1.6vw,22px); align-items:start">
+            <div data-cols="420" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr)); gap:clamp(14px,1.6vw,22px); align-items:start">
               <sc-for list="{{ p.xp }}" as="x" hint-placeholder-count="0">
                 <article data-fx="" style="display:flex; flex-direction:column; border-radius:26px; overflow:hidden; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 30%, transparent); backdrop-filter:blur(26px) saturate(140%); -webkit-backdrop-filter:blur(26px) saturate(140%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent)">
                   <sc-if value="{{ x.hasImg }}" hint-placeholder-val="{{ false }}">
@@ -570,7 +583,7 @@
         <div style="display:{{ p.optDisplay }}">
           <sc-for list="{{ p.optList }}" as="o" hint-placeholder-count="2">
             <div id="{{ o.wrapId }}">
-              <section style="min-height:100vh; position:relative; display:flex; align-items:center; padding:140px var(--gr, clamp(20px,6vw,88px)) 100px var(--gl, clamp(20px,6vw,88px)); overflow:hidden; box-sizing:border-box">
+              <section id="{{ o.secOpcion }}" style="min-height:100vh; position:relative; display:flex; align-items:center; padding:140px var(--gr, clamp(20px,6vw,88px)) 100px var(--gl, clamp(20px,6vw,88px)); overflow:hidden; box-sizing:border-box">
                 <div style="position:absolute; right:-2vw; top:50%; transform:translateY(-50%); pointer-events:none">
                   <div data-fx="" style="font-family:var(--font-serif); font-size:clamp(220px,34vw,560px); line-height:.8; letter-spacing:-.05em; color:transparent; -webkit-text-stroke:1px color-mix(in srgb, var(--ink) 16%, transparent)">{{ o.num }}</div>
                 </div>
@@ -793,7 +806,7 @@
                             </sc-for>
                           </div>
                           <div style="display:{{ m.mediaDisplay }}; flex:7 1 0; min-width:min(360px,100%); max-width:{{ m.mediaMax }}; margin:0 auto; flex-direction:column; gap:clamp(36px,5vh,56px); order:{{ m.mOrder }}">
-                            <sc-if value="{{ m.hasVideo }}" hint-placeholder-val="{{ false }}">
+                            <sc-if value="{{ m.videoTop }}" hint-placeholder-val="{{ false }}">
                               <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(8px,1.1vw,14px); width:100%">
                                 <div data-fx="" data-cursor="Ver vídeo" onClick="{{ m.onVideo }}" style="grid-row:{{ m.vidRow }}; grid-column:{{ m.vidCol }}; position:relative; aspect-ratio:{{ m.vidAr }}; border-radius:22px; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 30px 80px color-mix(in srgb, var(--ink) 12%, transparent)">
                                   <img decoding="async" loading="lazy" src="{{ m.videoPoster }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover">
@@ -807,6 +820,17 @@
                                 </sc-for>
                               </div>
                             </sc-if>
+                            <sc-for list="{{ m.listsM }}" as="l" hint-placeholder-count="0">
+                              <div data-fx="" style="display:flex; flex-direction:column">
+                                <span style="padding:0 0 12px; font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">{{ l.title }}</span>
+                                <sc-for list="{{ l.items }}" as="li" hint-placeholder-count="3">
+                                  <div style="display:flex; gap:18px; padding:14px 0; border-top:1px solid color-mix(in srgb, var(--ink) 16%, transparent)">
+                                    <span style="flex:none; display:flex; align-items:center; height:25.6px"><i class="fa-solid fa-arrow-right" style="width:16px; font-size:13px; line-height:1; text-align:center; color:var(--accent)"></i></span>
+                                    <span style="font:400 16px/1.6 var(--font-sans); color:var(--ink); text-wrap:pretty">{{ li.text }}</span>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-for>
                             <div data-fx="" data-cursor="Galería" onClick="{{ m.gal.onOpen }}" style="display:{{ m.gal.coverDisplay }}; position:relative; width:100%; aspect-ratio:4 / 3; border-radius:22px; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 30px 80px color-mix(in srgb, var(--ink) 10%, transparent)">
                               <img decoding="async" loading="lazy" src="{{ m.gal.cover }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
                               <span style="position:absolute; top:16px; right:16px; display:flex; align-items:center; gap:8px; height:36px; padding:0 14px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 72%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); color:var(--ink); font:700 11px/1 var(--font-sans); letter-spacing:.12em"><i class="fa-solid fa-images" style="width:14px; font-size:12px; line-height:1; text-align:center; color:var(--accent)"></i>{{ m.gal.count }}</span>
@@ -814,8 +838,12 @@
                             <div style="display:{{ m.mosaicDisplay }}; container-type:inline-size; width:100%">
                               <div style="display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); grid-auto-rows:calc((100cqi - 11 * clamp(8px,1.1vw,14px)) / 12 * .8); gap:clamp(8px,1.1vw,14px)">
                                 <sc-for list="{{ m.mosaic }}" as="mc" hint-placeholder-count="2">
-                                  <div data-fx="" style="grid-column:{{ mc.col }}; grid-row:{{ mc.row }}; position:relative; border-radius:{{ mc.radius }}; overflow:hidden; background:var(--slot); box-shadow:0 24px 60px color-mix(in srgb, var(--ink) 9%, transparent)">
-                                    <img decoding="async" loading="lazy" src="{{ mc.src }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
+                                  <div data-fx="" data-cursor="{{ mc.cursor }}" onClick="{{ mc.onOpen }}" style="grid-column:{{ mc.col }}; grid-row:{{ mc.row }}; position:relative; border-radius:{{ mc.radius }}; overflow:hidden; cursor:{{ mc.pointer }}; background:var(--slot); box-shadow:0 24px 60px color-mix(in srgb, var(--ink) 9%, transparent)">
+                                    <img decoding="async" loading="lazy" src="{{ mc.src }}" alt="" style="display:{{ mc.imgDisplay }}; position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
+                                    <sc-if value="{{ mc.isVid }}" hint-placeholder-val="{{ false }}">
+                                      <video data-vprev="" src="{{ mc.src }}" muted="" loop="" playsinline="" preload="metadata" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover"></video>
+                                      <span style="position:absolute; left:14px; bottom:14px; display:flex; align-items:center; gap:10px; height:36px; padding:0 16px 0 12px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 72%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); color:var(--ink); font:700 11px/1 var(--font-sans); letter-spacing:.16em; text-transform:uppercase"><i class="fa-solid fa-volume-high" style="width:14px; font-size:11px; line-height:1; text-align:center; color:var(--accent)"></i>Con sonido</span>
+                                    </sc-if>
                                   </div>
                                 </sc-for>
                               </div>
@@ -859,10 +887,10 @@
                           </div>
                         </div>
                         <div data-fx="" style="display:{{ m.actsTitleDisplay }}; margin:0 0 calc(-1 * clamp(16px,3vh,36px)); font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">{{ m.actsTitle }}</div>
-                        <div data-cols="290" style="display:{{ m.actsDisplay }}; grid-template-columns:repeat(auto-fill,minmax(min(360px,100%),1fr)); gap:clamp(20px,2.4vw,32px)">
+                        <div data-cols="290" data-split="{{ m.actsSplit }}" style="display:{{ m.actsDisplay }}; grid-template-columns:repeat(auto-fill,minmax(min(360px,100%),1fr)); gap:clamp(20px,2.4vw,32px)">
                           <sc-for list="{{ m.acts }}" as="a" hint-placeholder-count="0">
-                            <article data-fx="" data-cursor="{{ a.cursor }}" onClick="{{ a.onOpen }}" style="display:flex; flex-direction:column; border-radius:26px; overflow:hidden; cursor:pointer; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 32%, transparent); backdrop-filter:blur(26px) saturate(140%); -webkit-backdrop-filter:blur(26px) saturate(140%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent); transition:border-color 500ms cubic-bezier(.22,.61,.36,1), background-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="border-color:color-mix(in srgb, var(--accent) 55%, transparent); background:color-mix(in srgb, var(--glass) 50%, transparent)">
-                              <div style="position:relative; aspect-ratio:4 / 3; overflow:hidden; background:var(--slot)">
+                            <article data-fx="" data-cursor="{{ a.cursor }}" onClick="{{ a.onOpen }}" style="display:flex; flex-direction:{{ a.dir }}; flex-wrap:{{ a.wrap }}; border-radius:26px; overflow:hidden; cursor:pointer; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 32%, transparent); backdrop-filter:blur(26px) saturate(140%); -webkit-backdrop-filter:blur(26px) saturate(140%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent); transition:border-color 500ms cubic-bezier(.22,.61,.36,1), background-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="border-color:color-mix(in srgb, var(--accent) 55%, transparent); background:color-mix(in srgb, var(--glass) 50%, transparent)">
+                              <div style="position:relative; flex:{{ a.mediaFlex }}; min-width:0; min-height:{{ a.mediaMinH }}; aspect-ratio:{{ a.mediaAr }}; overflow:hidden; background:var(--slot)">
                                 <img decoding="async" loading="lazy" src="{{ a.cover }}" alt="{{ a.name }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
                                 <sc-if value="{{ a.hasVideo }}" hint-placeholder-val="{{ false }}">
                                   <video data-vprev="" src="{{ a.video }}" muted="" loop="" playsinline="" preload="metadata" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover"></video>
@@ -870,10 +898,20 @@
                                 </sc-if>
                                 <span style="position:absolute; top:14px; right:14px; display:{{ a.countDisplay }}; align-items:center; gap:8px; height:32px; padding:0 12px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 72%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); color:var(--ink); font:700 11px/1 var(--font-sans); letter-spacing:.12em"><i class="fa-solid fa-images" style="width:14px; font-size:12px; line-height:1; text-align:center; color:var(--accent)"></i>{{ a.count }}</span>
                               </div>
-                              <div style="padding:clamp(24px,2.6vw,34px); display:flex; flex-direction:column; gap:16px; flex:1 1 auto">
+                              <div style="padding:{{ a.pad }}; box-sizing:border-box; display:flex; flex-direction:column; justify-content:{{ a.justify }}; gap:16px; flex:{{ a.textFlex }}; min-width:0">
                                 <div style="display:{{ a.lineDisplay }}; font:700 11px/1.5 var(--font-sans); letter-spacing:.16em; text-transform:uppercase; color:var(--accent)">{{ a.line }}</div>
                                 <h5 style="margin:0; font-family:var(--font-serif); font-weight:400; font-size:clamp(26px,2.4vw,36px); line-height:1.05; letter-spacing:-.018em; color:var(--ink)">{{ a.name }}</h5>
                                 <p style="display:{{ a.bodyDisplay }}; margin:0; font:400 16px/1.7 var(--font-sans); color:color-mix(in srgb, var(--ink) 80%, transparent); text-wrap:pretty">{{ a.body }}</p>
+                                <div style="display:{{ a.cardsDisplay }}; flex-direction:column; gap:12px; padding-top:14px; border-top:1px solid color-mix(in srgb, var(--ink) 14%, transparent)">
+                                  <span style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)">{{ a.cardsTitle }}</span>
+                                  <div style="display:grid; grid-template-columns:repeat({{ a.cardsN }},minmax(0,1fr)); gap:10px">
+                                    <sc-for list="{{ a.cards }}" as="cd" hint-placeholder-count="0">
+                                      <div data-cursor="Ampliar" onClick="{{ cd.onOpen }}" style="position:relative; aspect-ratio:4 / 5; border-radius:12px; overflow:hidden; cursor:pointer; background:var(--slot); border:1px solid color-mix(in srgb, var(--ink) 12%, transparent)">
+                                        <img decoding="async" loading="lazy" src="{{ cd.src }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.05)">
+                                      </div>
+                                    </sc-for>
+                                  </div>
+                                </div>
                                 <div style="display:{{ a.schedDisplay }}; flex-direction:column">
                                   <sc-for list="{{ a.schedule }}" as="sc" hint-placeholder-count="0">
                                     <div style="display:grid; grid-template-columns:56px minmax(0,1fr); gap:12px; padding:9px 0; border-top:1px solid color-mix(in srgb, var(--ink) 14%, transparent)">
@@ -916,6 +954,28 @@
                                 </div>
                               </sc-for>
                             </div>
+                          </div>
+                        </div>
+                        <div style="display:{{ m.vlDisplay }}; grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr)); gap:clamp(32px,5vw,80px); align-items:center">
+                          <div data-fx="" data-cursor="Ver vídeo" onClick="{{ m.onVideo }}" style="position:relative; aspect-ratio:{{ m.vidAr }}; border-radius:22px; overflow:hidden; cursor:pointer; background:var(--slot); box-shadow:0 30px 80px color-mix(in srgb, var(--ink) 12%, transparent)">
+                            <img decoding="async" loading="lazy" src="{{ m.videoPoster }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover">
+                            <sc-if value="{{ m.videoBelow }}" hint-placeholder-val="{{ false }}">
+                              <video data-vprev="" src="{{ m.video }}" muted="" loop="" playsinline="" preload="metadata" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover"></video>
+                            </sc-if>
+                            <span style="position:absolute; left:14px; bottom:14px; display:flex; align-items:center; gap:10px; height:36px; padding:0 16px 0 12px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 16%, transparent); background:color-mix(in srgb, var(--glass) 72%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); color:var(--ink); font:700 11px/1 var(--font-sans); letter-spacing:.16em; text-transform:uppercase"><i class="fa-solid fa-volume-high" style="width:14px; font-size:11px; line-height:1; text-align:center; color:var(--accent)"></i>Con sonido</span>
+                          </div>
+                          <div style="display:flex; flex-direction:column; gap:36px">
+                            <sc-for list="{{ m.listsV }}" as="l" hint-placeholder-count="0">
+                              <div data-fx="" style="display:flex; flex-direction:column">
+                                <span style="padding:0 0 12px; font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">{{ l.title }}</span>
+                                <sc-for list="{{ l.items }}" as="li" hint-placeholder-count="3">
+                                  <div style="display:flex; gap:18px; padding:14px 0; border-top:1px solid color-mix(in srgb, var(--ink) 16%, transparent)">
+                                    <span style="flex:none; display:flex; align-items:center; height:25.6px"><i class="fa-solid fa-arrow-right" style="width:16px; font-size:13px; line-height:1; text-align:center; color:var(--accent)"></i></span>
+                                    <span style="font:400 16px/1.6 var(--font-sans); color:var(--ink); text-wrap:pretty">{{ li.text }}</span>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-for>
                           </div>
                         </div>
                       </article>
@@ -1048,18 +1108,20 @@
         <section style="min-height:80vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; padding:120px var(--gr, clamp(20px,6vw,88px)) 120px var(--gl, clamp(20px,6vw,88px)); box-sizing:border-box">
           <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)">{{ p.endLabel }}</div>
           <div data-fx="" style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:var(--accent)">{{ p.nextKicker }}</div>
-          <div style="display:flex; flex-direction:column; gap:16px; width:min(880px,100%)">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr)); gap:clamp(16px,2vw,28px); width:min(1240px,100%)">
             <sc-for list="{{ p.next }}" as="n" hint-placeholder-count="1">
-              <button data-fx="" data-cursor="Descubrir" onClick="{{ n.onClick }}" style="display:flex; align-items:center; gap:clamp(16px,3vw,32px); width:100%; padding:12px clamp(16px,2vw,24px) 12px 12px; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 22%, transparent); background:color-mix(in srgb, var(--glass) 32%, transparent); backdrop-filter:blur(24px) saturate(140%); -webkit-backdrop-filter:blur(24px) saturate(140%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent); color:var(--ink); cursor:pointer; text-align:left; transition:border-color 400ms cubic-bezier(.22,.61,.36,1), background-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="border-color:color-mix(in srgb, var(--accent) 60%, transparent); background:color-mix(in srgb, var(--glass) 60%, transparent)">
-                <span style="flex:none; position:relative; width:clamp(64px,8vw,96px); height:clamp(64px,8vw,96px); border-radius:999px; overflow:hidden; background:var(--slot)">
-                  <span style="position:absolute; inset:0; display:{{ n.slotDisplay }}"><image-slot id="{{ n.slot }}" shape="circle" placeholder="{{ n.ph }}"></image-slot></span>
-                  <img decoding="async" loading="lazy" src="{{ n.img }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ n.imgDisplay }}">
+              <button data-fx="" data-cursor="Descubrir" onClick="{{ n.onClick }}" style="display:flex; flex-direction:column; width:100%; padding:0; border-radius:26px; overflow:hidden; border:1px solid color-mix(in srgb, var(--ink) 18%, transparent); background:color-mix(in srgb, var(--glass) 32%, transparent); backdrop-filter:blur(24px) saturate(140%); -webkit-backdrop-filter:blur(24px) saturate(140%); box-shadow:inset 0 1px 0 color-mix(in srgb, var(--glass) 12%, transparent); color:var(--ink); cursor:pointer; text-align:left; transition:border-color 400ms cubic-bezier(.22,.61,.36,1), background-color 400ms cubic-bezier(.22,.61,.36,1)" style-hover="border-color:color-mix(in srgb, var(--accent) 60%, transparent); background:color-mix(in srgb, var(--glass) 55%, transparent)">
+                <span style="position:relative; display:block; width:100%; aspect-ratio:{{ n.ar }}; overflow:hidden; background:var(--slot)">
+                  <span style="position:absolute; inset:0; display:{{ n.slotDisplay }}"><image-slot id="{{ n.slot }}" shape="rect" placeholder="{{ n.ph }}"></image-slot></span>
+                  <img decoding="async" loading="lazy" src="{{ n.img }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ n.imgDisplay }}; transition:transform 1400ms cubic-bezier(.2,0,.15,1)" style-hover="transform:scale(1.035)">
                 </span>
-                <span style="flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:8px">
-                  <span style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)">Propuesta {{ n.num }}</span>
-                  <span style="font-family:var(--font-serif); font-size:clamp(26px,3.6vw,52px); line-height:1; letter-spacing:-.02em">{{ n.name }}</span>
+                <span style="display:flex; align-items:center; gap:clamp(16px,2vw,28px); padding:clamp(22px,2.6vw,34px)">
+                  <span style="flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:10px">
+                    <span style="font:700 11px/1.3 var(--font-sans); letter-spacing:.2em; text-transform:uppercase; color:color-mix(in srgb, var(--ink) 72%, transparent)">Propuesta {{ n.num }}</span>
+                    <span style="font-family:var(--font-serif); font-size:clamp(28px,3.2vw,48px); line-height:1; letter-spacing:-.02em; text-wrap:balance">{{ n.name }}</span>
+                  </span>
+                  <span style="flex:none; width:48px; height:48px; box-sizing:border-box; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 26%, transparent); background:color-mix(in srgb, var(--glass) 30%, transparent); color:var(--ink); display:flex; align-items:center; justify-content:center"><i class="fa-solid fa-arrow-right" style="display:block; width:1.25em; height:1em; line-height:1; text-align:center; font-size:13px; color:currentColor"></i></span>
                 </span>
-                <span style="flex:none; width:48px; height:48px; box-sizing:border-box; border-radius:999px; border:1px solid color-mix(in srgb, var(--ink) 26%, transparent); background:color-mix(in srgb, var(--glass) 30%, transparent); color:var(--ink); display:flex; align-items:center; justify-content:center"><i class="fa-solid fa-arrow-right" style="display:block; width:1.25em; height:1em; line-height:1; text-align:center; font-size:13px;  text-align:center; color:currentColor"></i></span>
               </button>
             </sc-for>
           </div>
@@ -1162,15 +1224,15 @@ class Component extends DCLogic {
     { key: 'activations', label: 'Activaciones' }, { key: 'budget', label: 'Presupuesto' }
   ];
   optSecs = [
-    { key: 'concept', label: 'Concepto' }, { key: 'briefing', label: 'Briefing' }, { key: 'experiencias', label: 'Experiencia', xp: true },
+    { key: 'concept', label: 'Concepto' }, { key: 'briefing', label: 'Briefing' }, { key: 'experiencias', label: 'Experiencia', xp: true }, { key: 'opcion', label: 'Opción', opt: true },
     { key: 'agenda', label: 'Agenda', opt: true }, { key: 'destino', label: 'Destino', opt: true }, { key: 'hotel', label: 'Alojamiento', opt: true }, { key: 'momentos', label: 'Momentos', opt: true }
   ];
   secsFor(e, oi) {
     if (!e || !e.options) return this.secs;
     const o0 = e.options[oi > 0 ? oi : 0] || e.options[0] || {};
     const L = e.secLabels || {};
-    return this.optSecs.filter((s) => s.xp ? (e.experiences || []).length : !s.opt || (s.key === 'agenda' ? o0.agenda : s.key === 'destino' ? o0.dest : s.key === 'hotel' ? o0.hotel : (o0.moments || []).length))
-      .map((s) => (L[s.key] ? Object.assign({}, s, { label: L[s.key] }) : s));
+    return this.optSecs.filter((s) => s.xp ? (e.experiences || []).length : !s.opt || s.key === 'opcion' || (s.key === 'agenda' ? o0.agenda : s.key === 'destino' ? o0.dest : s.key === 'hotel' ? o0.hotel : (o0.moments || []).length))
+      .map((s) => (s.key === 'opcion' ? Object.assign({}, s, { label: (o0.tag || 'Opción') + (o0.short ? ' · ' + o0.short : '') }) : L[s.key] ? Object.assign({}, s, { label: L[s.key] }) : s));
   }
   tracks = [
     { title: 'Moon Music', artist: 'Coldplay', src: 'assets/audio/moon-music.mp3' },
@@ -1504,8 +1566,16 @@ class Component extends DCLogic {
   layoutGrids() {
     document.querySelectorAll('[data-cols]').forEach(el => {
       const W = el.clientWidth; if (!W) return;
-      const kids = [...el.children].filter(k => k.offsetWidth || k.offsetHeight || getComputedStyle(k).display !== 'none'), n = kids.length; if (!n) return;
+      const kids = [...el.children].filter(k => k.offsetWidth || k.offsetHeight || getComputedStyle(k).display !== 'none'); let n = kids.length; if (!n) return;
       const g = parseFloat(getComputedStyle(el).columnGap) || 0, hard = +el.dataset.cols;
+      const sp = (el.dataset.split || '').split(',').map(Number).filter(Boolean);
+      if (sp.length && sp.reduce((a, b) => a + b, 0) === n) {
+        const mx = Math.max(...sp), cols = sp.reduce((a, b) => { let x = a, y = b; while (y) [x, y] = [y, x % y]; return a * b / x; });
+        const fits = (W - (mx - 1) * g) / mx >= hard * .82;
+        let i = 0; sp.forEach(r => { for (let j = 0; j < r; j++, i++) kids[i].style.gridColumn = fits ? 'span ' + (cols / r) : (r === 1 ? '1 / -1' : ''); });
+        if (fits) { const v = 'repeat(' + cols + ',minmax(0,1fr))'; if (el.style.gridTemplateColumns !== v) el.style.gridTemplateColumns = v; return; }
+        n = n - sp.filter(r => r === 1).length;
+      }
       const k0 = n > 1 && (W - g) / 2 >= hard ? 2 : 1;
       let best = k0, sc = -1;
       for (let k = k0; k <= n; k++) {
@@ -1975,8 +2045,8 @@ class Component extends DCLogic {
   }
 
   /* irregular mosaic on a 12-col grid: patterns for 1–4 images, longer sets chained in groups of 3 */
-  mosaic(srcs, mirror) {
-    const P = { 1: [[1, 13, 1, 11]], 2: [[1, 9, 1, 10], [9, 13, 3, 12]], 3: [[1, 8, 1, 9], [8, 13, 2, 9], [3, 11, 9, 15]], 4: [[1, 7, 1, 9], [7, 13, 2, 9], [7, 12, 9, 14], [2, 7, 9, 15]] };
+  mosaic(srcs, mirror, pat) {
+    const P = pat === 'posters' ? { 1: [[3, 11, 1, 15]], 2: [[1, 7, 1, 11], [7, 13, 3, 13]], 3: [[1, 5, 1, 8], [5, 9, 2, 9], [9, 13, 1, 8]] } : { 1: [[1, 13, 1, 11]], 2: [[1, 9, 1, 10], [9, 13, 3, 12]], 3: [[1, 8, 1, 9], [8, 13, 2, 9], [3, 11, 9, 15]], 4: [[1, 7, 1, 9], [7, 13, 2, 9], [7, 12, 9, 14], [2, 7, 9, 15]] };
     const list = srcs || [], sizes = []; let rest = list.length;
     while (rest > 4) { sizes.push(3); rest -= 3; }
     if (rest) sizes.push(rest);
@@ -2033,7 +2103,7 @@ class Component extends DCLogic {
       })(),
       agendaTitle: 'Agenda opción ' + (oi + 1) + ': ' + o.place + ' – ' + o.name,
       agendaDisplay: o.agenda ? 'block' : 'none', destinoDisplay: o.dest ? 'block' : 'none', hotelDisplay: o.hotel ? 'block' : 'none', momentosDisplay: (o.moments || []).length ? 'block' : 'none',
-      secAgenda: 'sec-agenda' + sfx, secDestino: 'sec-destino' + sfx, secHotel: 'sec-hotel' + sfx, secMomentos: 'sec-momentos' + sfx,
+      secOpcion: 'sec-opcion' + sfx, secAgenda: 'sec-agenda' + sfx, secDestino: 'sec-destino' + sfx, secHotel: 'sec-hotel' + sfx, secMomentos: 'sec-momentos' + sfx,
       ...(o.agenda ? {} : { dayHeads: [], rows: [], days: [] }),
       ...(o.agenda ? this.agendaVals(o, T) : {}),
       ...(() => {
@@ -2055,10 +2125,16 @@ class Component extends DCLogic {
         return {
           day: m.day, when: m.when, title: m.title, mediaMax: m.mediaMax || 'none',
           vidRow: m.videoWide ? 'auto' : '1 / span 2', vidCol: m.videoWide ? '1 / span 2' : 'auto', vidAr: m.videoWide ? '16 / 9' : '9 / 16',
-          vidSide: m.video ? (m.imgs || []).slice(0, 2).map((src, j) => ({ src, ar: m.videoWide ? ((m.imgs || []).length === 1 ? '16 / 9' : '4 / 3') : 'auto', col: m.videoWide && (m.imgs || []).length === 1 ? '1 / span 2' : 'auto', radius: j ? '16px' : '18px', onOpen: () => this.openGal(m.title, [m.video].concat(m.imgs || []), j + 1, (m.imgs || [])[0]) })) : [],
-          hasVideo: !!m.video, video: m.video, videoPoster: (m.imgs || [])[0], onVideo: () => this.openGal(m.title, [m.video].concat(m.imgs || []), 0, (m.imgs || [])[0]), lead: m.lead || '', leadDisplay: m.lead ? 'block' : 'none',
-          gal: this.galCover(m.collapse ? imgs : null), mosaicDisplay: (m.collapse || m.video) ? 'none' : 'block',
-          body: T(m.body), mosaic: m.collapse ? [] : this.mosaic(imgs, k % 2), mOrder: ord(k % 2 === 1), mediaDisplay: imgs.length ? 'flex' : 'none',
+          vidSide: m.video && !m.videoOnly ? (m.imgs || []).slice(0, 2).map((src, j) => ({ src, ar: m.videoWide ? ((m.imgs || []).length === 1 ? '16 / 9' : '4 / 3') : 'auto', col: m.videoWide && (m.imgs || []).length === 1 ? '1 / span 2' : 'auto', radius: j ? '16px' : '18px', onOpen: () => this.openGal(m.title, [m.video].concat(m.imgs || []), j + 1, (m.imgs || [])[0]) })) : [],
+          hasVideo: !!m.video, videoTop: !!m.video && !m.videoBelow && !!m.videoOnly, videoBelow: !!(m.video && m.videoBelow), vlDisplay: m.video && m.videoBelow ? 'grid' : 'none', video: m.video, videoPoster: (m.imgs || [])[0], onVideo: () => this.openGal(m.title, [m.video].concat(m.imgs || []), 0, (m.imgs || [])[0]), lead: m.lead || '', leadDisplay: m.lead ? 'block' : 'none',
+          gal: this.galCover(m.collapse ? imgs : null), mosaicDisplay: (m.collapse || (m.video && m.videoOnly && !m.videoBelow)) ? 'none' : 'block',
+          body: T(m.body), mosaic: m.collapse ? [] : (() => {
+            const mix = m.video && !m.videoBelow && !m.videoOnly, all = mix ? [m.video].concat(imgs) : imgs;
+            return this.mosaic(all, k % 2, m.mosaicPattern).map((c, j) => Object.assign(c, mix ? {
+              isVid: this.isVid(c.src), imgDisplay: this.isVid(c.src) ? 'none' : 'block', cursor: this.isVid(c.src) ? 'Ver vídeo' : 'Ampliar', pointer: 'pointer',
+              onOpen: () => this.openGal(m.title, all, j, [imgs[0]].concat(imgs))
+            } : { isVid: false, imgDisplay: 'block', cursor: 'Ampliar', pointer: 'pointer', onOpen: () => this.openGal(m.title, imgs, j) }));
+          })(), mOrder: ord(k % 2 === 1), mediaDisplay: imgs.length ? 'flex' : 'none',
           facts: m.facts || [], factsDisplay: m.facts ? 'grid' : 'none',
           links: m.links || [], linksDisplay: m.links ? 'flex' : 'none',
           actsTitle: m.actsTitle || '', actsTitleDisplay: m.actsTitle ? 'block' : 'none',
@@ -2066,16 +2142,23 @@ class Component extends DCLogic {
           schedDisplay: m.schedule && !(imgs.length && (m.lists || []).length) ? 'flex' : 'none',
           ...(() => {
             const L = (m.lists || []).map((l) => ({ title: l.title, items: T(l.items) }));
-            const long = !!(imgs.length && (L.length > 1 || (L.length && m.schedule)));
+            const V = !!(m.video && m.videoBelow), long = !V && !!(imgs.length && (L.length > 1 || (L.length && m.schedule)));
             const split = m.schedule ? 0 : Math.ceil(L.length / 2);
             return {
-              listsL: long ? [] : L, rowL: long ? L.slice(0, split) : [], rowR: long ? L.slice(split) : [],
+              listsV: V ? L : [], listsM: m.listsInMedia ? L : [], listsL: long || V || m.listsInMedia ? [] : L, rowL: long ? L.slice(0, split) : [], rowR: long ? L.slice(split) : [],
               rowDisplay: long ? 'grid' : 'none', rowSchedDisplay: long && m.schedule ? 'flex' : 'none',
-              schedInText: !long, align: long ? 'start' : 'center'
+              schedInText: !long, align: 'center'
             };
           })(),
           acts: acts.map((a, j) => ({
-            name: a.name, line: a.line || '', body: a.body || '', lineDisplay: a.line ? 'block' : 'none', bodyDisplay: a.body ? 'block' : 'none',
+            name: a.name, line: a.line || '', body: a.body || '',
+            cardsDisplay: (a.cards || []).length ? 'flex' : 'none', cardsN: String((a.cards || []).length || 1), cardsTitle: a.cardsTitle || '',
+            cards: (a.cards || []).map((c, j) => ({ src: c.src, ar: c.ar || '3 / 4', onOpen: (ev) => { if (ev) ev.stopPropagation(); this.openGal(a.name + ' · ' + (a.cardsTitle || ''), a.cards.map((x) => x.src), j); } })),
+            ...(() => { const H = !a.feature && (a.row || m.actsRow); return {
+            dir: a.feature || H ? 'row' : 'column', wrap: a.feature || H ? 'wrap' : 'nowrap',
+            mediaFlex: a.feature ? '1.25 1 min(520px,100%)' : H ? '1 1 240px' : '0 0 auto', mediaAr: a.feature ? '16 / 10' : H ? 'auto' : '4 / 3', mediaMinH: H ? '260px' : '0px',
+            textFlex: a.feature ? '1 1 min(360px,100%)' : H ? '1.15 1 260px' : '1 1 auto', justify: a.feature || H ? 'center' : 'flex-start',
+            pad: a.feature ? 'clamp(28px,3.6vw,56px)' : 'clamp(24px,2.6vw,34px)' }; })(), lineDisplay: a.line ? 'block' : 'none', bodyDisplay: a.body ? 'block' : 'none',
             schedule: a.schedule || [], schedDisplay: a.schedule ? 'flex' : 'none',
             specs: a.specs || [], specsDisplay: a.specs ? 'flex' : 'none',
             cover: (a.imgs || [])[0], count: String((a.imgs || []).length), countDisplay: (a.imgs || []).length > 1 ? 'flex' : 'none',
@@ -2085,7 +2168,7 @@ class Component extends DCLogic {
             includes: T(a.includes), incDisplay: a.includes ? 'flex' : 'none',
             links: a.links || [], linksDisplay: a.links ? 'flex' : 'none'
           })),
-          actsDisplay: acts.length ? 'grid' : 'none',
+          actsDisplay: acts.length ? 'grid' : 'none', actsSplit: m.actsSplit || '',
           marquee: gal.concat(gal).map((src, j) => ({ src, ar: (m.galleryAr || [])[j % gal.length] || 1.4, onOpen: () => this.openGal('', gal, j % gal.length) })), galleryTitle: m.galleryTitle || '', galleryDisplay: gal.length ? 'flex' : 'none'
         };
       })
@@ -2143,12 +2226,12 @@ class Component extends DCLogic {
         conceptTitle: e.conceptTitle, conceptLead: e.conceptLead, conceptBody: e.conceptBody,
         quote: e.quote || '', infoBody: e.infoBody || '', budgetRange: e.budgetRange || '',
         points: (e.conceptPoints || []).map((t) => ({ text: t })),
-        specs: (e.specs || []).map((s) => {
+        ...(() => { const A = (e.specs || []).map((s) => {
           const L = s.label.toLowerCase(), om = /opci[oó]n\s*(\d)/i.exec(s.label), o = om && (e.options || [])[+om[1] - 1];
           const img = o ? (o.hero || (o.hotel && (o.hotel.imgs || [])[0]) || (o.dest && ((o.dest.imgs || [])[0] || o.dest.img)) || '') : '';
           const icon = /asistent/.test(L) ? 'fa-users' : /fecha/.test(L) ? 'fa-calendar-days' : /objetivo/.test(L) ? 'fa-star' : /lugar/.test(L) ? 'fa-location-dot' : 'fa-circle-info';
-          return { label: s.label, value: s.value, icon, img, hasImg: !!img, onClick: () => { const el = document.getElementById('opt-' + e.id + '-' + (+om[1] - 1)); if (el) this.scrollTo(el, 0); } };
-        }),
+          return { opt: !!om, label: s.label, value: s.value, icon, img, hasImg: !!img, onClick: () => { if (!om) return; const el = document.getElementById('opt-' + e.id + '-' + (+om[1] - 1)); if (el) this.scrollTo(el, 0); } };
+        }); const O = A.filter((s) => s.opt); return { specs: A, specsMain: A.filter((s) => !s.opt), specsOpt: O, specsOptDisplay: O.length ? 'grid' : 'none' }; })(),
         slotConcept: e.id + '-concept-key',
         conceptDisplay: e.conceptTitle ? 'block' : 'none',
         ...(() => {
@@ -2162,7 +2245,7 @@ class Component extends DCLogic {
         quoteDisplay: e.quote ? 'flex' : 'none', infoDisplay: e.infoBody ? 'block' : 'none',
         optDisplay: opts ? 'block' : 'none', legacyDisplay: opts || !(e.venues || []).length ? 'none' : 'block',
         optList: opts && ei === st.ev ? opts.map((o, i) => this.buildOpt(e, o, i, mob)) : [],
-        secXp: 'sec-experiencias-' + e.id, xpDisplay: (e.experiences || []).length ? 'block' : 'none',
+        secXp: 'sec-experiencias-' + e.id, xpLabel: (e.secLabels || {}).xpHeading || 'La experiencia', xpDisplay: (e.experiences || []).length ? 'block' : 'none',
         xp: (e.experiences || []).map((x, j) => ({ n: String(j + 1).padStart(2, '0'), kicker: x.kicker, title: x.title, body: (x.body || []).map((s) => ({ text: s })), ...(() => { const I = x.imgs || (x.img ? [x.img] : []); return { img: I[0] || '', hasImg: I.length > 0, count: String(I.length), countDisplay: I.length > 1 ? 'flex' : 'none', cursor: I.length > 1 ? 'Galería' : 'Ampliar', onOpen: () => this.openGal(x.title, I, 0) }; })(), links: x.links || [], linksDisplay: x.links ? 'flex' : 'none' })),
         secConcept: 'sec-concept-' + e.id, secBriefing: 'sec-briefing-' + e.id, secVenues: 'sec-venues-' + e.id,
         secActivations: 'sec-activations-' + e.id, secBudget: 'sec-budget-' + e.id,
@@ -2187,7 +2270,7 @@ class Component extends DCLogic {
         budgetTotal: total.toLocaleString('es-ES') + ' €',
         endLabel: 'Fin de la propuesta ' + e.num,
         nextKicker: ei === EV.length - 1 ? '¿Quieres volver a verla?' : 'Descubre la siguiente propuesta',
-        next: others.map((j) => ({ num: EV[j].num, name: EV[j].name, slot: EV[j].id + '-banner', ph: EV[j].name + ' — imagen', img: EV[j].banner, imgDisplay: EV[j].banner ? 'block' : 'none', slotDisplay: EV[j].banner ? 'none' : 'block', onClick: () => this.selectEv(j) }))
+        next: others.map((j) => ({ ar: others.length > 1 ? '16 / 10' : '21 / 9', num: EV[j].num, name: EV[j].name, slot: EV[j].id + '-banner', ph: EV[j].name + ' — imagen', img: EV[j].banner, imgDisplay: EV[j].banner ? 'block' : 'none', slotDisplay: EV[j].banner ? 'none' : 'block', onClick: () => this.selectEv(j) }))
       };
     });
 
@@ -2201,7 +2284,7 @@ class Component extends DCLogic {
         } }))));
 
     return {
-      n16: 16, n18: 18, n20: 20, n34: 34,
+      n16: 16, n18: 18, n20: 20, n26: 26, n30: 30, n34: 34,
       wmTone: (this.themes[st.theme] || this.themes.intro).wm, bmTone: (this.themes[st.theme] || this.themes.intro).bm,
       phoneOn: this.phoneOn(),
       phoneScale: (() => { const H = st.h || window.innerHeight || 900, W = window.innerWidth || st.w || 1200; return Math.max(0.3, Math.min(1, (H - 48) / 874, (W - 48) / 402)).toFixed(3); })(),
