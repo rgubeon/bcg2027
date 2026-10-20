@@ -1090,8 +1090,45 @@ window.BCG_EVENTS = [
       "day": "Día 2 · 22 de octubre",
       "when": "Mañana · Experiencias",
       "title": "Actividades fuera del hotel",
+      "actsSplit": "1,2,3",
       "lead": "Porque existen muchas formas de ver Apulia.",
       "acts": [
+       {
+        "name": "La dolce vita en Alberobello",
+        "feature": true,
+        "dark": true,
+        "line": "En coches de época.",
+        "body": "Salida en coches de época, recorrido a pie con guías locales y comida final en la calle.",
+        "imgs": [
+         "assets/outing/p50-0.jpg",
+         "assets/outing/p50-1a.jpg",
+         "assets/outing/p50-1b.jpg",
+         "assets/outing/p50-2a.jpg",
+         "assets/outing/p50-2b.jpg"
+        ],
+        "schedule": [
+         {
+          "t": "10:00",
+          "text": "Salida en coche de época"
+         },
+         {
+          "t": "11:00",
+          "text": "Recorrido a pie por Alberobello"
+         },
+         {
+          "t": "12:30",
+          "text": "Tiempo libre para compras"
+         },
+         {
+          "t": "14:30",
+          "text": "Comida en la calle"
+         },
+         {
+          "t": "17:00",
+          "text": "Llegada al hotel"
+         }
+        ]
+       },
        {
         "name": "Barivecchia",
         "line": "Una visión del alma del sur de Italia.",
@@ -1237,39 +1274,6 @@ window.BCG_EVENTS = [
          {
           "t": "14:30",
           "text": "Llegada a Borgo Egnazia"
-         }
-        ]
-       },
-       {
-        "name": "La dolce vita en Alberobello",
-        "line": "En coches de época.",
-        "body": "Salida en coches de época, recorrido a pie con guías locales y almuerzo final en un jardín secreto.",
-        "imgs": [
-         "assets/outing/p50-1a.jpg",
-         "assets/outing/p50-1b.jpg",
-         "assets/outing/p50-2a.jpg",
-         "assets/outing/p50-2b.jpg"
-        ],
-        "schedule": [
-         {
-          "t": "10:00",
-          "text": "Salida en coche de época"
-         },
-         {
-          "t": "11:00",
-          "text": "Recorrido a pie por Alberobello"
-         },
-         {
-          "t": "12:30",
-          "text": "Tiempo libre para compras"
-         },
-         {
-          "t": "14:30",
-          "text": "Almuerzo en el jardín secreto"
-         },
-         {
-          "t": "17:00",
-          "text": "Llegada al hotel"
          }
         ]
        }
